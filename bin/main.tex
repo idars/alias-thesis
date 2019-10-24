@@ -1,0 +1,35 @@
+\documentclass[a4paper, 11pt]{report}
+
+\input{preamble}
+
+\begin{document}
+
+    \maketitlepage
+        {Alias}
+        {Developing a cross-platform application for creating personalised comics aimed for the Children and Youth Clinic at Haukeland University Hospital}
+        {Idar Antonsen Syslak}
+        {November 2019}
+    
+    \include{chapters/abstract}
+    \include{chapters/acknowledgements}
+    
+    \newgeometry{margin=1in}
+    
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    
+    \include{chapters/introduction}
+    \include{chapters/background}
+    \include{chapters/the-design-process}
+    \include{chapters/analysis-and-evaluation}
+    \include{chapters/tools-and-technology}
+    \include{chapters/conclusion}
+    \include{chapters/further-work}
+    
+    \printbibliography
+    
+    \appendix
+    % \include{appendices/sketches}
+
+\end{document}

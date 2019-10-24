@@ -1,0 +1,11 @@
+{  
+  "cSpell.enabled": true,
+  "editor.cursorBlinking": "solid",
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.wrappingIndent": "same",
+  "latex-workshop.latex.outDir": "../build",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false
+}

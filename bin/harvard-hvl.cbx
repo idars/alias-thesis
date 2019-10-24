@@ -1,0 +1,30 @@
+%% A biblatex implementation of the Harvard referencing style.
+%% Version: 2018-11-29
+%% 
+%% This configuration is built upon Leeds Beckett University 
+%% (2014): Quote, Unquote: a guide to Harvard referencing. 
+%% 2nd ed. Leeds: Leeds Beckett University.
+%% http://www.scientific-journals.co.uk/web_documents/quote_unquote.pdf
+%% 
+%% Written by Idar Syslak
+%% 
+\ProvidesFile{harvard-hvl.cbx}
+
+% Extend from the authoryear citation style
+\RequireCitationStyle{authoryear}
+
+%% Package options
+
+\ExecuteBibliographyOptions{
+    dashed=false,
+    maxcitenames=2,
+    uniquename=init,
+    uniquelist=minyear
+}
+
+%% Citations
+
+% Add comma between name and year
+\DeclareDelimFormat{nameyeardelim}{\addcomma\space}
+
+\endinput

@@ -1,0 +1,159 @@
+% Formatting
+
+% Header translations and hyphen formatting
+\usepackage[british]{babel}
+\usepackage[T1]{fontenc}
+% Adds support for Scandinavian letters
+\usepackage[utf8]{inputenc}
+% Required for biblatex
+\usepackage{csquotes}
+
+% Bibliography and citation style
+
+\usepackage[backend=biber, style=harvard-hvl]{biblatex}
+\addbibresource{references.bib}
+% More settings in harvard-hvl.bbx and harvard-hvl.cbx
+
+% Graphics
+
+% Loads the graphicx package
+\usepackage[export]{adjustbox}
+% For box manipulation
+% \usepackage{graphicx}
+% Place figures side by side
+\usepackage{subcaption}
+% Advanced graphics
+% \usepackage{tikz}
+% Wrap text around figures
+% \usepackage{wrapfig}
+\graphicspath{
+    {figures/logos/} 
+    {figures/photos/} 
+    {figures/scans/}
+    {figures/screenshots/}
+}
+
+% Colors
+
+\usepackage[table]{xcolor}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{lightgray}{gray}{0.95}
+\definecolor{mediumgray}{gray}{0.85}
+
+% Tables
+
+\usepackage{tabu}
+% Left-aligned X column
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newtabulinestyle{hdottedline=0.4pt on 0.4pt}
+% Vertical padding
+\setlength{\tabulinesep}{8pt}
+% Horizontal padding
+\setlength{\tabcolsep}{8pt}
+% \rowcolors{1}{lightgray}{mediumgray} % Table row colors
+
+% Document margins and spacing
+
+% Page margins
+\usepackage[margin=1.75in]{geometry}
+% Space between paragraphs
+\usepackage{parskip}
+% Vertical padding in tables
+% \renewcommand{\arraystretch}{1.2}
+% \addparagraphcolumntypes{X}
+
+% Fonts
+
+% Font used in the titlepage
+\usepackage{helvet}
+% Modify fonts used in headings
+\usepackage{sectsty}
+% Serif typeface
+\usepackage{sourceserifpro}
+% Sans-serif typeface
+\usepackage{sourcesanspro}
+% Monospace typeface
+\usepackage{sourcecodepro}
+% \usepackage[scale=0.9]{sourcecodepro}
+% Circumvents a warning "font shape undefined" for \textbullet
+\usepackage{textcomp}
+% Use roman font in headings
+\allsectionsfont{\rmfamily}
+% Use sans-serif font in paragraphs
+\renewcommand{\familydefault}{\sfdefault}
+
+% Other packages, commands and environments
+
+\usepackage{enumitem}
+\usepackage{multicol}
+% Dummy text
+\usepackage{lipsum}
+% Elements for showing code
+% More settings in listings.cfg
+\usepackage{listings}
+
+% Custom titlepage
+\newcommand*{\maketitlepage}[4]{
+    \thispagestyle{empty}
+    
+    \begingroup
+        \fontfamily{phv} \selectfont
+        \centering % Center all text
+        
+        \vspace{200pt}
+        
+        {\Huge #1} \\ % Title
+        
+        \vspace{5pt}
+        
+        {\Large \textsl{#2}} \\ % Subtitle or further description
+        
+        \vspace{50pt}
+        
+        {\Large #3} \\ % Author name
+        
+        \vfill % Whitespace between the author name and the publisher logo
+        
+        {\Large Master's thesis in Software Engineering at \\
+        
+        \vspace{10pt}
+        
+        Department of Computing, Mathematics and Physics, \\
+        Western Norway University of Applied Sciences \\
+        
+        \vspace{10pt}
+        
+        Department of Informatics, \\
+        University of Bergen \\}
+        
+        \vspace{10pt}
+        
+        {\large #4} % Month and year published
+        
+        \vspace{10pt} % to compensate for the lack of captions
+        
+        \begin{figure}[h!]
+            \begin{subfigure}{200pt}
+                \includegraphics[width=\linewidth, valign=c]{hvl-logo.png}
+            \end{subfigure}
+            \hfill
+            \begin{subfigure}{70pt}
+                \includegraphics[width=\linewidth, valign=c]{uib-logo.eps}
+            \end{subfigure}
+        \end{figure}
+        
+        \vspace{10pt} % to compensate for the lack of captions
+    \endgroup
+    
+    \pagebreak
+}
+
+% New environment for acknowledgements
+\newenvironment{acknowledgements}{
+    \renewcommand{\abstractname}{Acknowledgements}
+    \begin{abstract}
+}{
+    \end{abstract}
+}

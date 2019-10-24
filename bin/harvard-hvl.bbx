@@ -1,0 +1,127 @@
+%% A biblatex implementation of the Harvard referencing style.
+%% Version: 2018-11-29
+%% 
+%% This style assumes that the following journal fields are used in the following ways:
+%%     "volume": volume of the journal (numeric)
+%%     "number": issue or part number (numeric)
+%%     "issue": month or season of the year (string)
+%% 
+%% This configuration is built upon Leeds Beckett University 
+%% (2014): Quote, Unquote: a guide to Harvard referencing. 
+%% 2nd ed. Leeds: Leeds Beckett University.
+%% http://www.scientific-journals.co.uk/web_documents/quote_unquote.pdf
+%% 
+%% Written by Idar Syslak
+%% 
+\ProvidesFile{harvard-hvl.bbx}
+
+% Extend from the authoryear bibliography style
+\RequireBibliographyStyle{authoryear}
+
+%% Package options
+
+\ExecuteBibliographyOptions{
+    dateabbrev=false,
+    doi=false, % will need to adjust later on
+    giveninits=true,
+    isbn=false,
+    maxbibnames=100,
+    mergedate=compact,
+    % uniquename=init,
+    % uniquelist=minyear,
+    urldate=long
+}
+
+%% Bibliography
+
+% Show subsequent names as lastname-firstname
+% Example: "Surname, A. and B. Surname" 
+%       -> "Surname, A. and Surname, B."
+\DeclareNameAlias{sortname}{family-given}
+
+% Remove period after year
+\DeclareDelimFormat[bib,biblist]{nametitledelim}{\space}
+
+% Show "n.d." if no date given
+\DeclareLabeldate{
+    \field{date}\field{eventdate}
+    \field{origdate}\literal{nodate}
+}
+
+% Remove quotation marks from titles in journal entries
+\DeclareFieldFormat[article,incollection,unpublished]{title}{#1}
+
+% Append "[Internet]" to title in online entries
+\DeclareFieldFormat[online]{title}{%
+    \mkbibbold{#1} \mkbibbrackets{Internet}
+}
+
+% Suppress "In:" from journal entries
+\renewbibmacro{in:}{
+    \ifentrytype{article}{}{   % Added
+        \printtext{\bibstring{in}\intitlepunct}
+    }
+}
+
+% Remove period between volume and number in journal entries
+\renewbibmacro{volume+number+eid}{%
+    \printfield{volume}%
+    % \setunit{\adddot}%   % Removed
+    \setunit{\addspace}%   % Added
+    \printfield{number}%
+    \setunit{\addcomma\space}%
+    \printfield{eid}%
+}
+
+% Add parentheses around journal number
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+
+% Remove parentheses around journal issue (month/season)
+\renewbibmacro{issue+date}{
+    \iffieldundef{issue}{}{%
+        % \printtext[parens]{%   % Removed
+            \printfield{issue}%
+            \setunit*{\addspace}%
+            \usebibmacro{date}%
+        % }
+    }
+    \newunit
+}
+
+% Rephrase URL strings
+\DefineBibliographyStrings{english}{
+    urlseen = {Accessed},   % default: "visited on"
+    url = {Available at:}   % default: "URL:"
+}
+
+% Add pointy brackets around URL
+\DeclareFieldFormat{url}{
+    \bibstring{url}\space\textless\url{#1}\textgreater
+}
+
+% Add square brackets around date accessed
+\DeclareFieldFormat{urldate}{
+    \mkbibbrackets{\bibstring{urlseen}\space#1}
+}
+
+% Suppress URL fields on articles
+\DeclareFieldFormat[article,incollection,unpublished]{url}{}
+\DeclareFieldFormat[article,incollection,unpublished]{urldate}{}
+
+%% Styling (optional)
+
+% Make titles bold rather than italic
+\DeclareFieldFormat[thesis]{title}{\mkbibbold{#1}}
+\DeclareFieldFormat{journaltitle}{\mkbibbold{#1} \addcomma}
+
+% Use standard rather than monospaced font for URLs
+\urlstyle{same}
+
+% Add vertical space between bibliography entries
+% alternatively use \baselineskip
+\setlength{\bibitemsep}{0.3cm plus 0.3ex}
+
+% Remove indentation on subsequent lines
+\setlength{\bibhang}{0pt}   % default: \parindent
+
+\endinput
