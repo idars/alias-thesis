@@ -1,0 +1,48 @@
+\chapter{Application outline}
+\label{ch:outline}
+
+\section{Application model}
+
+Figure
+
+\section{Anticipated challenges and feasibility}
+
+The development tools chosen for an application should support the functionality of the application. The following subsections illustrate a few scenarios which the chosen development tools should support.
+
+\subsection{Projecting the avatar on the screen}
+
+Given that the avatar generation system only outputs images seen from the front view angle only, it will require additional work to make these look natural in a three-dimensional space. This has also been taken into consideration when deciding which tool to use for developing the application.
+
+The avatar generation system created for E-LAN (from \ref{sec:relatedwork}) can be used together with the application. This enables the user to view their avatar in procedures like they were participating themselves. The system does, however, only output portrait pictures in 2D and concerns were raised about whether these would look realistic in certain settings. For example, using a single 2D image, a person laying in the bed would look awkward unless viewed from above the bed. There are in fact multiple approaches to this as seen in table \ref{tab:projecting-avatar}.
+
+% Figure with 4 images showing the different projections?
+
+\begin{table}
+    \centering
+    \begin{tabu}{L[0.75] l L[0.5] l L}
+        \textbf{} & \textbf{Realism} & \textbf{Processing \newline power} & \textbf{Ease of use} & \textbf{Additional \newline requirements} \\ \hline
+        \textbf{2D images} & Lowest & Lowest & Highest & None \\ \tabucline[hdottedline]{-}
+        \textbf{2D image sets with various poses} & High & Low & High & Extra image sets \\ \tabucline[hdottedline]{-}
+        \textbf{2D images rotated in 3D} & Low & High & Low & Software framework which supports 3D rotations \\ \tabucline[hdottedline]{-}
+        \textbf{3D models} & Highest & Highest & Lowest & New 3D models; a 3D rendering engine; software framework which supports 3D rotations \\ \hline
+    \end{tabu}
+    \caption{Different ways to project an avatar on a screen}
+    \label{tab:projecting-avatar}
+\end{table}
+
+It is shown that 2D images can be rotated in 3D pretty realistically. \textcite{rivers2010} carried out a project which showed that it is possible to view a figure from any angle when given three 2D projections of it.
+
+Though, an alternative is to simply use such avatars in 2D-space. 
+
+
+The IACTA application shows that this can be used with similar effect as a 3D-application \parencite{stalberg2018}.
+
+\section{Handoff}
+
+The scope of this project involves minimal integration with existing healthcare and journal systems at Barneklinikken and Haukeland. Given that Helse Vest IKT monitors most of said systems, it would be sensible to develop an application that can be adapted, or even be developed further on, by them. It was pointed out that the developers of the avatar generation system used well-established web technologies such as HTML, CSS and JavaScript to develop it, and that similar technologies were preferred for the new application. This led to a new direction in choosing the most suitable software tools.
+
+With this in mind, there were two main approaches remaining:
+
+The first approach involves a mobile app and can be achieved in two ways; one way is to compile an application into native code. There are a number of frameworks which are able to transpile JavaScript into native applications, although the syntaxes may vary. Another way is to use \emph{hybrid applications}, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
+
+The remaining approach is through web applications which run in web browsers. Lately there have been increasing interest in \emph{Progressive Web Apps} (PWAs), which aim to make websites more app-like on mobile devices with offline access and push notifications. They do, however, require a website which is capable of serving HTTPS. PWAs is a relatively new kind of technology with increasing support in both Android and iOS. Some browsers also support adding an app icon to the user's app launcher, circumventing app stores in the process.
