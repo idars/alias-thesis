@@ -17,7 +17,9 @@ Internally, the LaTeX project uses `pdflatex` with `biber` as the backend and `b
 
 Clone the repository
 
-```git clone https://github.com/idars/alias-thesis```
+```
+git clone https://github.com/idars/alias-thesis
+```
 
 Install the following extenstions for Visual Studio Code:
 
