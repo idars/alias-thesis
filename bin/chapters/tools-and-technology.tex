@@ -1,15 +1,9 @@
 \chapter{Tools and technology}
 \label{ch:tools}
 
-\section{Requirements}
-
-The Children and Youth Clinic expects an application where the user can view personally targeted procedures. These will feature the user's own personal avatar along with information about an upcoming procedure at the hospital. Afterwards, the user should be able to rate their experience, and if possible, this rating should be reflected when the procedure is shown in retrospect.
-
-The target group will be children and youth at the clinic with ages raging from 5 to 12. The content of the application must therefore be adapted to the target group and be suitable for their age. An essential plan when it comes to the design of the application is to let children of the intended age group test it in various stages of its development. Their input is valuable since it can contribute to making the application age-appropriate \parencite{stalberg2016}.
-
-The clinic expressed that they intend to use the application on larger screens and most likely on tablets.
-
 \section{Choice of application setup}
+
+Refer to \ref{sec:requirements}
 
 Requirements were not really present for this project; instead, there are various interests in how the application should be made and what it should result in.
 
@@ -26,47 +20,49 @@ As with most mobile applications, there is a choice between the following approa
 
 Due to the uncertainty in which operating systems that are in use (and will be used in the future), going for a cross-platform application is the most preferred. 
 
-Flutter is a relatively new framework
+% Dersom en Windows-løsning er ønskelig vil dette muligens kreve kunnskap om .NET, noe som ikke er blitt lært hittil. Det er flere måter å utvikle Windows 10-eksklusive applikasjoner på, men jeg har ikke gått i detalj gjennom disse ennå.
 
-Dersom en Windows-løsning er ønskelig vil dette muligens kreve kunnskap om .NET, noe som ikke er blitt lært hittil. Det er flere måter å utvikle Windows 10-eksklusive applikasjoner på, men jeg har ikke gått i detalj gjennom disse ennå.
+% Dersom vi lander på å utvikle for mobile operativsystemer vil det være naturlig å lage en multiplatform-applikasjon. Dersom ønskelig kan man etterpå se på en web-applikasjon eller en Windows desktop app.
 
-Dersom vi lander på å utvikle for mobile operativsystemer vil det være naturlig å lage en multiplatform-applikasjon. Dersom ønskelig kan man etterpå se på en web-applikasjon eller en Windows desktop app.
+% \begin{lstlisting}[float]
+% - Xamarin (Microsoft)
+% 	- C og F
+% 	- Stabilt og robust rammeverk
+% 	- Kan utvikle for Windows 10 samtidig som for Android og iOS
+% 	- Dårligere ytelse
+% 	- Tidkrevende
+% - Flutter (Google)
+% 	- Dart (C-lignende syntaks, kompilerer til JavaScript)
+% 	- God ytelse
+% 	- Hot reload
+% 	- Ganske nytt; mangler erfaring som andre rammeverk har
+% - React Native (Facebook)
+% 	- HTML/CSS/JavaScript
+% 	- Bruker native UI-elementer
+% 	- Hot reload
+% 	- Kan gjenbruke kode for eventuell nettside
+% 	- Dårligere ytelse
+% 	- Relativt vanskelig å teste
+% - PhoneGap (Adobe) / Cordova (Apache)
+%     - HTML/CSS/JavaScript
+%     - Tradisjonelle web-rammeverk
+%     - Delvis manglende støtte for native funksjonalitet
+% - Titanium
+%     - JavaScript
+%     - 
+% \end{lstlisting}
 
-- Xamarin (Microsoft)
-	- C og F
-	- Stabilt og robust rammeverk
-	- Kan utvikle for Windows 10 samtidig som for Android og iOS
-	- Dårligere ytelse
-	- Tidkrevende
-- Flutter (Google)
-	- Dart (C-lignende syntaks, kompilerer til JavaScript)
-	- God ytelse
-	- Hot reload
-	- Ganske nytt; mangler erfaring som andre rammeverk har
-- React Native (Facebook)
-	- HTML/CSS/JavaScript
-	- Bruker native UI-elementer
-	- Hot reload
-	- Kan gjenbruke kode for eventuell nettside
-	- Dårligere ytelse
-	- Relativt vanskelig å teste
-- PhoneGap (Adobe) / Cordova (Apache)
-    - HTML/CSS/JavaScript
-    - Tradisjonelle web-rammeverk
-    - Delvis manglende støtte for native funksjonalitet
-- Titanium
-    - JavaScript
-    - 
+% Flutter har stort potensiale for utvikling av mobilapplikasjoner og ser ut til å passe oppgavebeskrivelsen på en god måte. Dersom man ønsker å utvikle en og samme app både for Windows 10 og for Android/iOS vil Xamarin være et lovende alternativ.
 
-Flutter har stort potensiale for utvikling av mobilapplikasjoner og ser ut til å passe oppgavebeskrivelsen på en god måte. Dersom man ønsker å utvikle en og samme app både for Windows 10 og for Android/iOS vil Xamarin være et lovende alternativ.
-
-Angående 3D-rotering av 2D-bilder kan dette oppnås enten ved å bruke en rekke bilder som er ferdig rotert, eller å faktisk rotere 2D-bilder i 3D. Xamarin har støtte for sistnevnte via SkiaSharp. Flutter støtter 3D-rotering også. Det ser ut til at React Native ikke har native støtte for dette, men det finnes trolig JavaScript-plugins som kan tilføye slik funksjonalitet.
-
-\section{Aiming for an approach}
+% Angående 3D-rotering av 2D-bilder kan dette oppnås enten ved å bruke en rekke bilder som er ferdig rotert, eller å faktisk rotere 2D-bilder i 3D. Xamarin har støtte for sistnevnte via SkiaSharp. Flutter støtter 3D-rotering også. Det ser ut til at React Native ikke har native støtte for dette, men det finnes trolig JavaScript-plugins som kan tilføye slik funksjonalitet.
 
 Determining which approach to use requires paying attention to several factors: requirements, anticipated challenges and stakeholder interests among others. The requirements suggest using a cross-platform application primarily aimed for tablet devices, while Helse Vest IKT suggest using web technologies when developing the application. General factors such as cost, ease of use, responsiveness, support for older devices and debugging also play a role.
 
-When taking Helse Vest IKT's opinion into account, there are basically two types of applications left to choose from. 
+When taking Helse Vest IKT's opinion into account, there are two main approaches remaining:
+
+The first approach involves a mobile app and can be achieved in two ways; one way is to compile an application into native code. There are a number of frameworks which are able to transpile JavaScript into native applications, although the syntaxes may vary. Another way is to use \emph{hybrid applications}, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
+
+The remaining approach is through web applications which run in web browsers. Lately there have been increasing interest in \emph{Progressive Web Apps} (PWAs), which aim to make websites more app-like on mobile devices with offline access and push notifications. They do, however, require a website which is capable of serving HTTPS. PWAs is a relatively new kind of technology with increasing support in both Android and iOS. Some browsers also support adding an app icon to the user's app launcher, circumventing app stores in the process.
 
 Although only 2D images are currently supported, it seems reasonable to pick an approach that allow more extensive functionality if desired.
 
@@ -74,11 +70,13 @@ Given that both hybrid applications and Progressive Web Applications use web bro
 
 Based on the reflections above, a Progressive Web Application is considered to be less suitable for this project.
 
+\section{Frameworks}
+
 Next to consider is frameworks. Frameworks allow developers to develop an application more efficiently by facilitating APIs, UI components, navigation, MVC patterns, utility methods or a combination of these. Some frameworks can also help deploying the application to app stores.
 
 Table \ref{tab:frameworks} shows a few frameworks and what functionalities they offer.
 
-\begin{table}[h]
+\begin{table}
     \centering
     \begin{tabu}{l l L}
         \textbf{Framework} & \textbf{Functionality} & \textbf{Description} \\
@@ -114,36 +112,28 @@ It is unknown which frameworks the web developers of Helse Vest IKT have used pr
 A framework worth explaining is React
 React Native is a mobile version of React, able to transpile code to both Android and iOS.
 
-Is it too difficult for a web developer to learn React and its adjacent technologies? Learning React most likely requires learning JSX, Redux and Flux as well. Although 
-
-Supported functionalities
-What functionality do the frameworks facilitate?
+Is it too difficult for a web developer to learn React and its adjacent technologies? Learning React most likely requires learning JSX, Redux and Flux as well. Although (...)
 
 \section{Database system}
 
 SQL vs NoSQL
 
-\section{Technologies used}
+\section{Storage}
 
-\subsection{Framework}
+JSON
 
+% Lagringsmessig vil historier være serialiserte og kunne lagres i databaser. For å overføre historier kan de sendes i form av JSON-strenger som vil beskrive informasjon som
 
-CSS-in-JS - makes it easier to utilize visual themes
+% - Paneler
+% 	- Antall paneler, evt. navn på disse
+% 	- Størrelse på panel(er)
+% - Piktogram/avatar
+%     - Plassering
+% 	- Rotasjon
+% 	- Størrelse
+% 	- Om piktogrammet/avataren er speilvendt
+% 	- Farge
+% - Bakgrunn
+%     - Farge eller bilde
 
-\subsection{JSON}
-
-Lagringsmessig vil historier være serialiserte og kunne lagres i databaser. For å overføre historier kan de sendes i form av JSON-strenger som vil beskrive informasjon som
-
-- Paneler
-	- Antall paneler, evt. navn på disse
-	- Størrelse på panel(er)
-- Piktogram/avatar
-    - Plassering
-	- Rotasjon
-	- Størrelse
-	- Om piktogrammet/avataren er speilvendt
-	- Farge
-- Bakgrunn
-    - Farge eller bilde
-
-JSON kan også benyttes til å overføre kontoinformasjon, innstillinger og lignende. Bilder og piktogrammer overføres som filer.
+% JSON kan også benyttes til å overføre kontoinformasjon, innstillinger og lignende. Bilder og piktogrammer overføres som filer.

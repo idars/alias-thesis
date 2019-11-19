@@ -1,19 +1,49 @@
 \chapter{Application outline}
 \label{ch:outline}
 
-\section{Application model}
+\section{Implementation details}
 
-Figure
+An extended use case diagram is shown in figure \ref{fig:usecases2}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{use-cases-implementation.pdf}
+    \caption{Extended use case diagram}
+    \label{fig:usecases2}
+\end{figure}
+
+A revised and more detailed domain model is shown in figure \ref{fig:domainmodel2}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{domain-model-implementation.pdf}
+    \caption{Extended domain model}
+    \label{fig:domainmodel2}
+\end{figure}
+
+\section{Architecture}
+
+\subsection{Backend}
+
+\subsection{Frontend}
+
+\section{Integration with existing systems}
+
+Green figure
 
 \section{Anticipated challenges and feasibility}
 
 The development tools chosen for an application should support the functionality of the application. The following subsections illustrate a few scenarios which the chosen development tools should support.
 
-\subsection{Projecting the avatar on the screen}
+\subsection{Personalised avatars}
 
-Given that the avatar generation system only outputs images seen from the front view angle only, it will require additional work to make these look natural in a three-dimensional space. This has also been taken into consideration when deciding which tool to use for developing the application.
+The avatar generation system created for E-LAN (from \ref{sec:relatedwork}) can be used together with the application. This enables the user to view their avatar in procedures like they were participating themselves. A challenge lies in associating an avatar to each user while making it easy to modify it when needed. The system is based on a graphical user interfacedoes not present an API; it is very much a black box where the result is an exported PNG file.
 
-The avatar generation system created for E-LAN (from \ref{sec:relatedwork}) can be used together with the application. This enables the user to view their avatar in procedures like they were participating themselves. The system does, however, only output portrait pictures in 2D and concerns were raised about whether these would look realistic in certain settings. For example, using a single 2D image, a person laying in the bed would look awkward unless viewed from above the bed. There are in fact multiple approaches to this as seen in table \ref{tab:projecting-avatar}.
+\subsection{Realistic avatar projections}
+
+The system outputs two-dimensional portrait images only, with the face and chest facing forward. The images are also limited to the top part of the body, leaving the lower body out. Concerns were raised about whether these images would look realistic in certain settings. For example, using a single 2D image, a person laying in the bed would look awkward unless viewed from above the bed. To deal with this, there are several approaches as seen in table \ref{tab:projecting-avatar}.
+
+% Figure showing avatar
 
 % Figure with 4 images showing the different projections?
 
@@ -34,15 +64,41 @@ It is shown that 2D images can be rotated in 3D pretty realistically. \textcite{
 
 Though, an alternative is to simply use such avatars in 2D-space. 
 
-
 The IACTA application shows that this can be used with similar effect as a 3D-application \parencite{stalberg2018}.
+
+\subsection{Visual art and template designs}
+
+This brings us (?) to the next challenge. (...)
+
+\subsection{Connections between client and admin applications}
+
+To be written
+
+\subsection{Integrations towards current healthcare systems}
+
+To be written
+
+\subsection{Security concerns}
+
+To be written
+
+\subsection{Service workers and offline content}
+
+Experimental technology
+Not-so-easy with web projects
+
+\subsection{Scaling}
+
+To be written
+
+\subsection{Costs}
+
+To be written
 
 \section{Handoff}
 
 The scope of this project involves minimal integration with existing healthcare and journal systems at Barneklinikken and Haukeland. Given that Helse Vest IKT monitors most of said systems, it would be sensible to develop an application that can be adapted, or even be developed further on, by them. It was pointed out that the developers of the avatar generation system used well-established web technologies such as HTML, CSS and JavaScript to develop it, and that similar technologies were preferred for the new application. This led to a new direction in choosing the most suitable software tools.
 
-With this in mind, there were two main approaches remaining:
+Attached to this thesis are Figma project files and source code for an incomplete software prototype using React and create-react-app.
 
-The first approach involves a mobile app and can be achieved in two ways; one way is to compile an application into native code. There are a number of frameworks which are able to transpile JavaScript into native applications, although the syntaxes may vary. Another way is to use \emph{hybrid applications}, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
-
-The remaining approach is through web applications which run in web browsers. Lately there have been increasing interest in \emph{Progressive Web Apps} (PWAs), which aim to make websites more app-like on mobile devices with offline access and push notifications. They do, however, require a website which is capable of serving HTTPS. PWAs is a relatively new kind of technology with increasing support in both Android and iOS. Some browsers also support adding an app icon to the user's app launcher, circumventing app stores in the process.
+(...)

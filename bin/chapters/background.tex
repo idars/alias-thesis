@@ -1,24 +1,15 @@
 \chapter{Background}
 \label{ch:background}
 
-\section{Terminology}
-\label{sec:terminology}
-
-A \emph{pictogram} (also called a pictograph) is a simplified figure that resembles and represents a physical object. Pictograms are a common sight in a modern everyday life and are used to warn about dangers, to inform about functionality and to hint about specific characteristics. As such, they can be seen e.g. at traffic signs, danger signs, public toilets and in computers. Naturally, pictograms vary in shapes and sizes, but they are ultimately designed in a way that make them easy to interpret and understand their symbolic meaning.
-
-Given that the application will be used in a hospital setting, the associated terminology will be extended to the application. A \emph{procedure} is a sequence of steps separated from each other. Each \emph{step} contains a background, an avatar and elements related to the procedure in the form of illustrations or pictures, and may feature interactive as well as non-interactive elements.
-
-Story - scene
-Comic strip - panel
-Procedure - step
-
 \section{Preceding projects}
 
 This project builds upon experience from a bachelor thesis named \emph{PictogramApp} which was based on another project named \emph{Pictogram-me}.
 
 \subsection{Pictogram-me}
 
-Since 2011, associate professor in graphic design Linda Lien and professor in visual communication Ashley Booth have researched on creative usage of pictograms (figures which represent physical objects, see \ref{sec:terminology}). Their artistic research project, named \emph{Pictogram-me}, experiments how pictograms can be used to express complex social messages \parencite{lien2018}. The aim is to illustrate challenging situations that people who have a difficult life may endure. Despite pictograms being flat and simplified, Lien and Booth wanted to show how pictograms also can visualise difficult topics and promote empathy.
+Since 2011, associate professor in graphic design Linda Lien and professor in visual communication Ashley Booth have researched on creative usage of pictograms. A pictogram, also called a pictograph, is a simplified figure that resembles and represents a physical object. They vary in shapes and sizes, but they are ultimately designed in a way that make them easy to interpret and understand their symbolic meaning.
+
+Lien's and Booth's artistic research project, named \emph{Pictogram-me}, experiments how pictograms can be used to express complex social messages \parencite{lien2018}. The aim is to illustrate challenging situations that people who have a difficult life may endure. Despite pictograms being flat and simplified, Lien and Booth wanted to show how pictograms also can visualise difficult topics and promote empathy.
 
 Pictogram-me presents a new set of pictograms that are designed for the purpose of the project. In addition, the project has resulted in various concepts including
 
@@ -28,7 +19,7 @@ Pictogram-me presents a new set of pictograms that are designed for the purpose 
     \item \emph{PictoTheatre}, a small-scale theatre where pictograms can be arranged on a scene. A tablet can be placed behind the scene and function as a background as illustrated in \ref{fig:pictotheatre}.
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \includegraphics[width=0.55\textwidth]{pictotheatre.jpg}
     \caption{PictoTheatre, shown at the 2016 RØST conference in Bergen}
@@ -39,7 +30,7 @@ Pictogram-me presents a new set of pictograms that are designed for the purpose 
 
 In 2017, the Western Norway University of Applied Sciences issued out a bachelor project in collaboration with Linda and Booth, with the purpose of creating a smartphone application. The application, which was later named \emph{PictogramApp}, was meant to be a digital version of PictoTheatre where pictograms can be arranged on the screen and form visual messages in a mobile manner \parencite{fure2017}. The application allows users to place pictograms in context in order to create their own stories -- see figure \ref{fig:pictogramapp}. PictogramApp was targeted towards the Church City Mission, a voluntary organisation which offers help and services for people living near the street. A functional prototype of the application was released in June 2017.
 
-\begin{figure}[h]
+\begin{figure}
     \centering
     \begin{subfigure}{0.3\textwidth}
         \centering
@@ -61,21 +52,28 @@ In 2017, the Western Norway University of Applied Sciences issued out a bachelor
 \section{Related work}
 \label{sec:relatedwork}
 
-CYC has prior to this project experimented with different ways to engage their patients. Among these was an e-sport event named \emph{E-LAN}, held in the end of October 2018. The purpose of this event was to connect gaming towards a healthy lifestyle and to let children and youth master various areas of interest. As a part of this initiative, an avatar generation system was created that let users create personal avatars which represent themselves. Each user would then carry their avatar in a name tag attached on their clothing. The software seems to run on Windows with support for a web client, and outputs two-dimensional portrait pictures.
+The Children and Youth Clinic has prior to this project experimented with different ways to engage their patients. Among these was an e-sport event named \emph{E-LAN}, held in the end of October 2018. The purpose of this event was to connect gaming towards a healthy lifestyle and to let children and youth master various areas of interest. As a part of this initiative, an avatar generation system was created that let users create personal avatars which represent themselves. Each user would then carry their avatar in a name tag attached on their clothing. The software seems to run on Windows with support for a web client, and outputs two-dimensional portrait pictures.
 
 Several applications and prototypes have been made that aim to provide information about and illustrate a child's hospital stay. A notable example is \emph{IACTA}, short for \emph{Inter-Active Communication Tool for Activities}. This application ()...) \parencite{stalberg2018}.
 
-Another example is an inpatient portal application named \emph{MyChart Bedside}, developed by Epic Systems Corporation. for tablet devices. A study conducted by \textcite{kelly2017} revealed that 90 percent of children's parents were satisfied with the portal. 
+Another example is an inpatient portal application named \emph{MyChart Bedside}, developed by Epic Systems Corporation for tablet devices. A study conducted by \textcite{kelly2017} revealed that 90 percent of children's parents were satisfied with the portal. 
 
 Bitmoji
 
 Instruction videos used by Norwegian on their airplanes
 
-\section{Theoretical foundation}
+\section{Hospital settings and terminology}
+\label{sec:medicterminology}
 
-The problem area was presented first and foremost by CYC. During meetings, Paul Thorsen stated that they wanted to improve the ways of which children were informed about upcoming procedures. Currently, the information that is given here is primarily textual and of varying interest for younger patients.
+Given that the application will be used in a hospital setting, the associated terminology will be extended to the application. A \emph{procedure} is a sequence of steps separated from each other. Each \emph{step} contains a background, an avatar and elements related to the procedure in the form of illustrations or pictures, and may feature interactive as well as non-interactive elements.
 
-A number of search queries was performed on academic literature in order to confirm these statements and gain further insight in the problem area. Each query contained a set of the following keywords:
+Story - scene
+Comic strip - panel
+Procedure - step
+
+\section{Litterature background}
+
+A number of queries were performed on academic literature search engines in order to discover related work and gain further insight in the problem area. Each query contained a set of the following keywords:
 
 \begin{multicols}{3}
     \raggedcolumns
@@ -96,7 +94,5 @@ A number of search queries was performed on academic literature in order to conf
         \item Personalised
     \end{itemize}
 \end{multicols}
-
-The queries yielded nine articles which form the theoretical foundation of this thesis.
 
 % List relevant papers that cover the problem area?

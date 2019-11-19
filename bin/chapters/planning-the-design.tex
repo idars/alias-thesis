@@ -1,8 +1,70 @@
 \chapter{Planning the design}
 \label{ch:planning}
 
-\section{Considerations etc etc}
+This chapter deals with the initial planning of the design, where the most important factors are considered.
+
+\section{Inspiration}
+
+The PictogramApp application, of which the master project will primarily be based on, allows users to create their own \emph{stories} consisting of an arbitrary number of \emph{scenes}. These concepts can be applied to the new application, though they will be named as \emph{procedures} and \emph{steps} respectively.
+
+\section{Requirements}
+\label{sec:requirements}
+
+The first step of the interaction design lifecycle is centered around establishing requirements. This involves having a dialog with the client, getting an idea of what they expect and correcting the requirements if they change. \textcite{preece2015} lists out two aims of a requirement activity:
+
+\begin{quote}
+    One aim is to understand as much as possible about the users, their activities, and the context of that activity, so the system under development can support them in achieving their goals. Building on this, our second aim is to produce a set of stable requirements that form a sound basis to start designing.
+\end{quote}
+
+The initial requirements were formed after a meeting with Helgesen and Thorsen. These are divided into functional requirements which describe what the application should do, and non-functional requirements which tell something about constraints of the application and its development.
+
+\subsection{Functional requirements}
+
+SCP wishes to have an application where the user can view personally targeted procedures. These will feature the user's own personal avatar along with information about an upcoming procedure at the hospital. Afterwards, the user should be able to rate their experience, and if possible, this rating should be reflected when the procedure is shown in retrospect.
+
+
+
+\subsection{Non-functional requirements}
+
+The clinic expressed that they intend to use the application on larger screens akin to tablets.
+
+\section{Target groups}
+
+As the requirements reveal, the application is intended for several users. It is therefore important to know who these users may be. For this project, these users are described in form of target groups.
+
+The primary target group will be children and youth at the clinic with ages raging from 5 to 12. The content of the application must therefore be adapted to the target group and be suitable for their age.
+
+The second target group will be the staff at the clinic. This includes physicians, practicioners, consultants, medical assistants and other people working with healthcare.
+
+A third target group is relatives and parents of patients. This group is worth considering as they do have an influence for the patient's stay. In fact, parents contribute to decision-making for most children.
+
+An essential plan when it comes to the design of the application is to let children of the intended age group test it in various stages of its development. Their input is valuable since it can contribute to making the application age-appropriate \parencite{stalberg2016}.
+
+\section{Domain}
+
+The domain of the application is mostly related to healthcare.
+
+A class diagram of the domain is shown in figure \ref{fig:domain1}.
+
+% This figure describes ...
+% For example...
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{domain-model-general.pdf}
+    \caption{Domain model}
+    \label{fig:domain1}
+\end{figure}
 
 \section{Use cases}
 
-\section{Domain model}
+An use case diagram is shown in figure \ref{fig:usecases1}. Some use cases may be grouped together, such as Related use cases are grouped together
+
+% Some use cases are cooperative...
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{use-cases-general.pdf}
+    \caption{Use case diagram}
+    \label{fig:usecases1}
+\end{figure}
