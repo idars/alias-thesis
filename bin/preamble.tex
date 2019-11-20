@@ -7,7 +7,11 @@
 \usepackage[utf8]{inputenc}
 % Required for biblatex
 \usepackage{csquotes}
+% Hyperlinks and cross-referencing
 \usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink, noabbrev]{cleveref}
+% Circumvents some overfull hboxes
+\usepackage{microtype}
 
 % Bibliography and citation style
 
@@ -70,8 +74,6 @@
 
 % Font used in the titlepage
 \usepackage{helvet}
-% Modify fonts used in headings
-\usepackage{sectsty}
 % Serif typeface
 \usepackage{sourceserifpro}
 % Sans-serif typeface
@@ -82,7 +84,9 @@
 % Circumvents a warning "font shape undefined" for \textbullet
 \usepackage{textcomp}
 % Use roman font in headings
-\allsectionsfont{\rmfamily}
+\usepackage[rm, bf]{titlesec}
+% \usepackage{sectsty}
+% \allsectionsfont{\rmfamily}
 % Use sans-serif font in paragraphs
 \renewcommand{\familydefault}{\sfdefault}
 
