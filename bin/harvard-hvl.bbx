@@ -40,7 +40,7 @@
 \DeclareNameAlias{sortname}{family-given}
 
 % Remove period after year
-\DeclareDelimFormat[bib,biblist]{nametitledelim}{\space}
+\DeclareDelimFormat[bib, biblist]{nametitledelim}{\space}
 
 % Show "n.d." if no date given
 \DeclareLabeldate{
@@ -49,19 +49,24 @@
 }
 
 % Remove quotation marks from titles in journal entries
-\DeclareFieldFormat[article,incollection,unpublished]{title}{#1}
+\DeclareFieldFormat[article, incollection]{title}{#1}
 
 % Append "[Internet]" to title in online entries
 \DeclareFieldFormat[online]{title}{%
     \mkbibbold{#1} \mkbibbrackets{Internet}
 }
 
-% Suppress "In:" from journal entries
-\renewbibmacro{in:}{
-    \ifentrytype{article}{}{   % Added
-        \printtext{\bibstring{in}\intitlepunct}
+% Append type to title if present in unpublished works
+\DeclareFieldFormat[misc]{title}{%
+    \mkbibbold{#1}
+    \iffieldundef{type}{}{
+        \mkbibbrackets{\thefield{type}}
     }
 }
+\DeclareFieldFormat[misc]{type}{}
+
+% Suppress "In:" from journal entries
+\renewbibmacro{in:}{}
 
 % Remove period between volume and number in journal entries
 \renewbibmacro{volume+number+eid}{%
@@ -74,7 +79,9 @@
 }
 
 % Add parentheses around journal number
-\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{number}{%
+    \mkbibparens{#1}
+}
 
 % Remove parentheses around journal issue (month/season)
 \renewbibmacro{issue+date}{
@@ -91,28 +98,55 @@
 % Rephrase URL strings
 \DefineBibliographyStrings{english}{
     urlseen = {Accessed},   % default: "visited on"
-    url = {Available at:}   % default: "URL:"
+    url = {Available from:}   % default: "URL:"
 }
 
 % Add pointy brackets around URL
-\DeclareFieldFormat{url}{
+\DeclareFieldFormat{url}{%
     \bibstring{url}\space\textless\url{#1}\textgreater
 }
 
 % Add square brackets around date accessed
-\DeclareFieldFormat{urldate}{
+\DeclareFieldFormat{urldate}{%
     \mkbibbrackets{\bibstring{urlseen}\space#1}
 }
 
 % Suppress URL fields on articles
-\DeclareFieldFormat[article,incollection,unpublished]{url}{}
-\DeclareFieldFormat[article,incollection,unpublished]{urldate}{}
+\DeclareFieldFormat[article, incollection]{url}{}
+\DeclareFieldFormat[article, incollection]{urldate}{}
 
-%% Styling (optional)
+% Integrate thesis type into so it connects to publisher+location+date
+\DeclareFieldFormat[thesis]{type}{%
+    #1 \addcomma
+}
+
+% Suppress location field in thesis
+\DeclareListFormat[thesis]{location}{}
+
+% Turn colon between location and publisher/institution into a comma
+\renewbibmacro*{publisher+location+date}{%
+    \printlist{location}%
+    \iflistundef{location}{
+        \setunit*{\addcomma\space}
+    }{
+        \setunit*{\addcomma\space}
+    }%
+    \printlist{publisher}%
+    \setunit*{\addcomma\space}%
+    \usebibmacro{date}%
+    \newunit
+}
+
+%% Styling
 
 % Make titles bold rather than italic
-\DeclareFieldFormat[thesis]{title}{\mkbibbold{#1}}
-\DeclareFieldFormat{journaltitle}{\mkbibbold{#1} \addcomma}
+% Also removes quotation marks
+\DeclareFieldFormat[book, report, thesis, unpublished]{title}{%
+    \mkbibbold{#1}
+}
+\DeclareFieldFormat{journaltitle}{%
+    \mkbibbold{#1} \addcomma
+}
 
 % Use standard rather than monospaced font for URLs
 \urlstyle{same}

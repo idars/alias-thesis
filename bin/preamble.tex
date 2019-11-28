@@ -12,6 +12,8 @@
 \usepackage[nameinlink, noabbrev]{cleveref}
 % Circumvents some overfull hboxes
 \usepackage{microtype}
+% Formats dates
+\usepackage[british]{isodate}
 
 % Bibliography and citation style
 
@@ -89,6 +91,8 @@
 % \allsectionsfont{\rmfamily}
 % Use sans-serif font in paragraphs
 \renewcommand{\familydefault}{\sfdefault}
+% Use italics in quotes
+\AtBeginEnvironment{quote}{\itshape}
 
 % Other packages, commands and environments
 
