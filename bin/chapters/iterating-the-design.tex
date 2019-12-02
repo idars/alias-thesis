@@ -3,6 +3,8 @@
 
 Once the basic requirements are established, the iterative process of the design development begins. More detailed requirements will emerge as a result of the feedback and communication in the iterative design process. Each iteration works as a distinct step towards the final design of the application, from bare-bone paper sketches to high fidelity prototypes.
 
+After collecting feedback about each prototype, the feedback is analysed to give a clue of what is good and what needs to be refined. Considerations, while not a part of the analyses, reflect upon the situation and contribute toward the development of the design.
+
 \section{Iteration 1: Paper sketches}
 \label{sec:iteration1}
 
@@ -10,23 +12,19 @@ The version made in the first iteration is also the simplest, made with pencil a
 
 In the second side of the application, the sketches illustrate how a procedure may be edited by an authorized user (\autoref{fig:sketch-editprocedure}). The process involves creating frames, inserting elements and modifying them. A toolbar is shown at the top with a varying amount of buttons, showing only the ones that are relevant for the current situation. Compared to PictogramApp, the interface is supposed to be more drag-and-drop oriented with possibilities to drag pages between each other. Another improvement is that elements must be clicked/tapped before they can be modified.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{subfigure}{0.95\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{20181114_0001.jpg}
-        \subcaption{Viewing a procedure}
-        \label{fig:sketch-viewprocedure}
-    \end{subfigure}
-    \begin{subfigure}{0.95\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{20181114_0002.jpg}
-        \subcaption{Editing a procedure}
-        \label{fig:sketch-editprocedure}
-    \end{subfigure}
-    \caption{Sketches of the first design}
-    \label{fig:sketch-firstdesign}
-\end{figure}
+    \includegraphics[width=0.825\textwidth, trim={60 40 80 50}, clip]{20181114_0001.jpg}
+    \caption{Sketches of the first design: viewing a procedure}
+    \label{fig:sketch-viewprocedure}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width=0.825\textwidth, trim={60 40 80 50}, clip]{20181114_0002.jpg}
+    \caption{Sketches of the first design: editing a procedure}
+    \label{fig:sketch-editprocedure}
+\end{sidewaysfigure}
 
 \subsection{Considerations}
 
@@ -34,11 +32,11 @@ The scope of the application had been partially accounted for at this stage. It 
 
 Children at this age have most likely been made known to tablets and interactive devices, but the youngest children of the target group may not have sufficient prior experience, either due to their age or health-related issues or a combination of both. Less experienced users should be able to learn how to use the application quickly regardless. It is therefore a good idea to consider ways to inform and possibly demonstrate the user about possible ways to interact with the application.
 
-These initial ideas to the design will only give an indication of the final visual style of the application. Depending on the feedback of the test groups, the style should be one that the users feel more interesting. Some possible visual styles include a modern and minimal approach with focus on essential elements (similar to PictogramApp) and a more cartoonish, fun style with drawing-like pictures and an informal look. The choice of style should keep the users in mind; 
+These initial ideas to the design will only give an indication of the final visual style of the application. Depending on the feedback of the test groups, the style should be one that the users feel more interesting. Some possible visual styles include a modern and minimal approach with focus on essential elements (similar to PictogramApp) and a more cartoon-ish, fun style with drawing-like pictures and an informal look. The choice of style should keep the users in mind; 
 
 \subsection{Analysis}
 
-This design is made entirely in landscape mode, that is, with the device laying on its longest side. This felt natural when considering the application layout -- especially how procedures are displayed. For future iterations it might be beneficial to primarily design for portrait mode, with the device laying on the shorter side. This will make it easier to port the application to smartphones, and it will follow the flow as the majority of current applications are based on portrait mode (with no support for landscape views).
+This design was made entirely in landscape mode, that is, with the device laying on its longest side. This felt natural when considering the application layout -- especially how procedures are displayed. For future iterations it might be beneficial to primarily design for portrait mode, with the device laying on the shorter side. This will make it easier to port the application to smartphones, and it will follow the flow as the majority of current applications are based on portrait mode (with no support for landscape views).
 
 As previously stated, the rating system shown here is very simple with three distinct options. It was pointed out that a problem here is that this system does not portray what exactly the user is feeling if things are not great. A sad face can represent a lot of feelings, but this information can not be extracted afterwards.
 
@@ -49,60 +47,66 @@ The editing part of the design is also imagined through a touch interface. The m
 
 The second iteration yielded a form study prototype that shares many similarities with a wireframe. The prototype is also the first one made with a digital prototyping tool, allowing a higher fidelity despite the simplicity in the current design.
 
-Contrary to the first prototype, this is designed for portrait mode. It keeps the two-folded design of the home page, with a collapsable hamburger menu on the left and a list of procedures on the right as shown in \autoref{fig:i2-home}. Procedures may be filtered by their category such as \emph{treatments} and \emph{conversations}.
+Contrary to the first prototype, this is designed for portrait mode. It keeps the two-folded design of the home page, with a collapsible \enquote{hamburger} menu on the left and a list of procedures on the right as shown in \autoref{fig:i2-home}. Procedures may be filtered by their category such as \emph{treatments} and \emph{conversations}.
 
 Procedures are shown frame by frame in this design. Each frame may also have a description that can provide useful information about each step and increase the sense of safety for the user. At the bottom is a small overview of the frames in the procedure, making the user aware of their process.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration2-home.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration2-home.png}
         \caption{The home page}
         \label{fig:i2-home}
     \end{minipage}
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration2-procedure.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration2-procedure.png}
         \caption{A single frame of a procedure}
         \label{fig:i2-procedure}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
-The prototype also features screens of a procedure containing a video. Two possibilities were considered; one where the video is fitted in a similar way to the procedures that contain images only (\autoref{fig:i2-video-standard}); and another where the video is resized to fit the entire width of the screen (\autoref{fig:i2-video-fullscreen}). In the end, the latter may work as a fullscreen mode and act as a supplement to the first design.
+The prototype also features screens of a procedure containing a video. Two possibilities were considered; one where the video is fitted in a similar way to the procedures that contain images only (\autoref{fig:i2-video-standard}); and another where the video is resized to fit the entire width of the screen (\autoref{fig:i2-video-fullscreen}). In the end, the latter may function as a fullscreen mode and act as a supplement to the first design.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{subfigure}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration2-video.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration2-video.png}
         \subcaption{Viewing a video}
         \label{fig:i2-video-standard}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration2-video2.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration2-video2.png}
         \subcaption{Viewing a video in fullscreen}
         \label{fig:i2-video-fullscreen}
     \end{subfigure}
+    \hspace*{\fill}
     \caption{Two ways to view a video}
     \label{fig:i2-video}
-\end{figure}
+\end{sidewaysfigure}
 
 Lastly, the rating part has been extended from three smileys to nine emojis, featuring feelings such as \emph{delighted}, \emph{tired} and \emph{surprized} (\autoref{fig:i2-rating}). The new emojis are placed in a tappable grid, and tapping on an emoji turns its background green. Once the user has rated a procedure, the feelings that have been ticked will be shown on the respective procedure on the home page.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.4\textwidth, frame]{iteration2-rating.png}
-    \caption{An emoji grid}
+    \includegraphics[width=0.5\textwidth, trim={10 32 10 13}, clip]{iteration2-rating.png}
+    \caption{An emoji grid used in the prototype}
     \label{fig:i2-rating}
 \end{figure}
 
 \subsection{Analysis}
 
-Both video procedures feature media controls to administer the video playback. Whether these buttons are neccessary ultimately depends on the video format. If the video is a local file, then dedicated buttons are indeed necessary. However, if it is determined to use YouTube embeds for videos, then such buttons may not be needed as the embed includes them.
+Both video procedures feature media controls to administer the video playback. Whether these buttons are necessary ultimately depends on the video format. If the video is a local file, then dedicated buttons are indeed necessary. However, if it is determined to use YouTube embeds for videos, then such buttons may not be needed as the embed includes them.
 
-Questions were raised if whether it was necessary to include emojis that closely resembled each other, such as both \emph{glad} and \emph{blid} which both translate to \enquote{happy}. There was also skepticism if whether \emph{indifferent} qualifies as a feeling. If need be, it would be possible to express indifference by not tapping any emojis. Basically, the current rating system seems to be a bit unnecessarily complicated.
+Questions were raised if whether it was necessary to include emojis that closely resembled each other, such as both \emph{glad} and \emph{blid} which both translate to \enquote{happy}. There was also scepticism if whether \emph{indifferent} qualifies as a feeling. If need be, it would be possible to express indifference by not tapping any emojis. Basically, the current rating system seems to be a bit unnecessarily complicated.
 
 \subsection{Considerations}
 
@@ -117,21 +121,24 @@ The home page shown in \autoref{fig:i3-home} is similar, but the elements are bi
 
 The rating system has again been reworked, and this time it uses five feelings (\autoref{fig:i3-rating}). Each feeling has a slider that measures the intensity of each feeling, and the more intense, the bigger the emoji grows. The new design also allows space for text that can help describing what each feeling represents. The feelings that are measured to be greater than 50 \% will be displayed on the respective procedure -- this could mean that two or more emojis are displayed simultaneously.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration3-home.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration3-home.png}
         \caption{The home page with bigger elements}
         \label{fig:i3-home}
     \end{minipage}
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration3-rating.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration3-rating.png}
         \caption{Five feelings with bars}
         \label{fig:i3-rating}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
 \subsection{Analysis}
 
@@ -139,7 +146,7 @@ The main issue here is that there is currently no concept of \emph{timeline} in 
 
 A procedure may also consist of several procedures. This has not been accounted for in this design, but a wish for \emph{procedure groups} is present.
 
-Although the new rating system is now more similar to the existing system used at the clinic, there are still things that can be improved. Among others, there is no initial indication of where you want to drag the sliders. There is also a tad too much whitespace and little context; what are these feelings for? What is the intention here? What happens when the user taps the \emph{back} button?
+Although the new rating system is now more similar to the existing system used at the clinic, there are still things that can be improved. Among others, there is no initial indication of where you want to drag the sliders. There also seems to be too much whitespace and little context; what are these feelings for? What is the intention here? What happens when the user taps the \emph{back} button? Questions like these need to be taken care of in order to improve the user experience.
 
 \section{Iteration 4: Interactive prototype}
 \label{sec:iteration4}
@@ -148,92 +155,110 @@ The first interactive prototype is brought to life in the fourth iteration, with
 
 The experience starts at the doorstep, which in this case is the home page. The idea behind this is to have an informative, public page that any Internet user can view (\autoref{fig:i4-home}), along with an image of an avatar which is one of the main points in this iteration. A login step is required in order to view the user's sensitive data such as profile, timeline and procedures (\autoref{fig:i4-signin}), and one of the suggestions since iteration 3 was to use secure Norwegian authentication systems such as BankID. These are systems in use by banks and official entities in Norway, providing an electronic ID for Norwegian inhabitants.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{subfigure}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \vspace{0pt}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration4-home.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-home.png}
         \subcaption{A public home page}
         \label{fig:i4-home}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \vspace{0pt}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration4-signin.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-signin.png}
         \subcaption{Signing in using secure Norwegian authentication systems}
         \label{fig:i4-signin}
     \end{subfigure}
+    \hspace*{\fill}
     \caption{The application before accessing sensitive data}
     \label{fig:i4-welcome}
-\end{figure}
+\end{sidewaysfigure}
 
-The design and look of the application has been improved; instead of the hamburger menu, there is now a navigation bar. The titles are tappable, and the title of the current page is emphasized through a bigger font size.
+The design and look of the application has been improved; instead of the \enquote{hamburger} menu, there is now a navigation bar. The titles are tappable, and the title of the current page is emphasized through a bigger font size.
 
 The application itself is now divided in three; the first and primary page being the timeline (\autoref{fig:i4-timeline}). The line itself is shown to the left, with each dot representing a procedure or a group of procedures. To make it clear where the user is, there is a headline \emph{next procedure} which acts like a \enquote{you are here} mark. Past procedures are greyed out to avoid confusion.
 
 The previous home page, listing the last used procedures, is now in a page named \emph{Procedures}. Other than that, there are few changes apart from the visuals. Emojis are now placed over the preview area, making more room for the text below.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration4-timeline.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-timeline.png}
         \caption{The timeline page}
         \label{fig:i4-timeline}
     \end{minipage}
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration4-procedures.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-procedures.png}
         \caption{The procedures page (previous home page)}
         \label{fig:i4-procedures}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
-There is now a dedicated page for feelings (\autoref{fig:i4-feelings}) where the user can view information gathered by rating each procedure. The last given rating is shown at the top, with the respective emoji and scale for each feeling. Swiping up, there is a filter for each feeling that show only the procedures that made the user feel happy, procedures that were sad, fearful procedures et cetera, combined with a strong background color for each feeling.
+There is now a dedicated page for feelings (\autoref{fig:i4-feelings}) where the user can view information gathered by rating each procedure. The last given rating is shown at the top, with the respective emoji and scale for each feeling. Swiping up, there is a filter for each feeling that show only the procedures that made the user feel happy, procedures that were sad, fearful procedures \emph{et cetera}, combined with a strong background colour for each feeling.
 
 When tapping on a procedure, the screen in \autoref{fig:i4-procedure} slides up into view. For this prototype, one standard graphical procedure and one video-based procedure were made. The layout remains mostly the same as in \autoref{sec:iteration2}, but now with complete illustrations for the interactiveness of the prototype.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration4-feelings.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-feelings.png}
         \caption{The feelings page}
         \label{fig:i4-feelings}
     \end{minipage}
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration4-procedure.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-procedure.png}
         \caption{Interactive procedure page}
         \label{fig:i4-procedure}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
 The rating screen has turned into an overlay which, instead of appearing as a new page and covering the whole screen, appears over part of the procedure screen. Tapping on the greyed area has the same effect as tapping on \emph{back}; taking the user back to the previous screen. A new feature for the sliders is a label on the right-hand side. For the happy feeling it displays \emph{ikke glad} (not happy), \emph{lite glad} (little happy), \emph{ganske glad} (pretty happy) and \emph{veldig glad} (very happy) depending on the intensity of the feeling.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.4\textwidth, frame]{iteration4-rating.png}
-    \caption{The new rating overlay}
-    \label{fig:i4-rating}
-\end{figure}
-
-Once completing all procedures, a new entry \emph{epicrisis} appears on the nagivation bar. The epicrisis page itself has not been designed in this iteration.
+Once completing all procedures, a new entry \emph{epicrisis} appears on the navigation bar. The epicrisis page itself has not been designed in this iteration.
 
 The profile icon that previously was intended to be put on the left-hand side is now to be found in the upper right corner.
 When tapping it, a sidebar will appear as seen in \autoref{fig:i4-profile-sidebar} with pages such as \emph{my profile}, \emph{my avatar} and \emph{settings}. These were not functional in the prototype.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \includegraphics[width=0.4\textwidth, frame]{iteration4-profile-sidebar.png}
-    \caption{Profile sidebar}
-    \label{fig:i4-profile-sidebar}
-\end{figure}
+    \hspace{\fill}
+    \begin{minipage}[t]{0.4\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-rating.png}
+        \caption{The new rating overlay}
+        \label{fig:i4-rating}
+    \end{minipage}
+    \hspace{\fill}
+    \begin{minipage}[t]{0.4\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration4-profile-sidebar.png}
+        \caption{Profile sidebar}
+        \label{fig:i4-profile-sidebar}
+    \end{minipage}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
 \subsection{Analysis}
 
-This prototype has been primariy been designed for use with a second generation iPad that could be borrowed. The testing could therefore be done with the intended shape and form, using swiping and tapping with fingers instead of clicking and dragging with a mouse. The prototype was, however, presented on a projector for bigger groups who were pressured on time.
+This prototype has been primarily been designed for use with a second generation iPad that could be borrowed. The testing could therefore be done with the intended shape and form, using swiping and tapping with fingers instead of clicking and dragging with a mouse. The prototype was, however, presented on a projector for bigger groups who were pressured on time.
 
-The results of the user testing deemed that the Norwegian authentication systems as shown in the login sequence (\autoref{fig:i4-signin}), is unnecessary. It is not given that those systems will be used in the final application, although useful for authentication matters. A simple, local login system will suffice during this design phase.
+Upon the iteration feedback, it was deemed that the authentication systems as shown in the login sequence (\autoref{fig:i4-signin}) are unnecessary. It is not given that those systems will be used in the final application, although they could prove to be useful for authentication matters, but that is not to be considered until the actual implementation. A simple, local login system will suffice during the design process.
 
 The rating overlay shown in \autoref{fig:i4-rating} is better, but not good enough. The labels provide more information about the feeling, but at the initial state, there is still no indication of where you need to drag the sliders. They remain a bit unintuitive.
 
@@ -252,98 +277,134 @@ The next iteration is more of an experimental kind, working more as an alternati
 
 Starting with the timeline in \autoref{fig:i5-timeline}, the layout spans two columns now instead of a single column. When including information about the place in addition to time, the timeline began to look a bit too repetitive and spaced out (fewer procedures which can be shown on the screen). Since this application is aimed for tablet devices, it made sense to utilize the horizontal space and separate the time from the rest of the information. This allows for the date and time of the viewed procedures to remain on the top left of the screen when scrolling down. The previous layout from iteration 4 may still be used for smaller devices such as smartphones.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{subfigure}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration5-timeline-graph.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration5-timeline-graph.png}
         \subcaption{History as graph}
         \label{fig:i5-timeline-graph}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration5-timeline-list.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration5-timeline-list.png}
         \subcaption{History as list}
         \label{fig:i5-timeline-list}
     \end{subfigure}
+    \hspace*{\fill}
     \caption{Timeline with two alternatives for showing rating history}
     \label{fig:i5-timeline}
-\end{figure}
+\end{sidewaysfigure}
 
-Among the things experimented with, there are coloured procedure elements and a dropdown panel. The reason behind colouring the procedures is to visualize whether they have been read or not. As one of the aims behind the application is to prepare patients for upcoming procedures, it also makes sense to highlight procedures which haven't been viewed yet with the primary color. Once viewed, the procedure will be no longer highlighted. The dropdown element brings information about the rating given for each procedure and appears when the user taps on the emoji. The rating can then be expanded to show its history; either represented as a graph (\autoref{fig:i5-timeline-graph}) or as a list (\autoref{fig:i5-timeline-list}). The headings in the navigation bar have been put to the center where they are easier to each and seem to be more decorative than being left-aligned.
+Among the things experimented with, there are coloured procedure elements and a dropdown panel. The reason behind colouring the procedures is to visualize whether they have been read or not. As one of the aims behind the application is to prepare patients for upcoming procedures, it also makes sense to highlight procedures which haven't been viewed yet with the primary colour. Once viewed, the procedure will be no longer highlighted. The dropdown element brings information about the rating given for each procedure and appears when the user taps on the emoji. The rating can then be expanded to show its history; either represented as a graph (\autoref{fig:i5-timeline-graph}) or as a list (\autoref{fig:i5-timeline-list}). The headings in the navigation bar have been put to the center where they are easier to each and seem to be more decorative than being left-aligned.
 
 \begin{figure}
     \centering
+    \hspace{\fill}
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth]{iteration5-dropdown1.png}
+        \includegraphics[width=\textwidth]{iteration5-dropdown1.png}
         \subcaption{Before tapping the procedure}
         \label{fig:i5-dropdown1}
     \end{subfigure}
+    \hspace{\fill}
     \begin{subfigure}[t]{0.45\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth]{iteration5-dropdown2.png}
+        \includegraphics[width=\textwidth]{iteration5-dropdown2.png}
         \subcaption{After tapping the procedure}
         \label{fig:i5-dropdown2}
     \end{subfigure}
+    \hspace*{\fill}
     \caption{Dropdown element}
     \label{fig:i5-dropdown}
 \end{figure}
 
-The rather standard layout for the procedures page has in this iteration been swapped out with a more complementary layout. The search bar, previously put aside, is now the main focus. Having one column instead of two is more efficient as the left-hand side was mostly empty. The procedure elements have also changed; instead of having the labels laying at the bottom, they are hovering above the rectangular preview area such that dropdown element is closer to the emoji. The labels would be in the way and obstruct the flow otherwise. The page for feelings still contains the last given rating, but now with the associated procedure.
+The rather standard layout for the procedures page has in this iteration been swapped out with a more complementary layout. The search bar, previously put aside, is now the main focus. Having one column instead of two is more efficient as the left-hand side was mostly empty. The procedure elements have also changed; instead of having the labels laying at the bottom, they are hovering above the rectangular preview area such that the dropdown element is closer to the emoji. The labels would be in the way and obstruct the flow otherwise. The page for feelings still contains the last given rating, but now with the associated procedure.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration5-procedures.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration5-procedures.png}
         \caption{Procedures page with new layout}
         \label{fig:i5-procedures}
     \end{minipage}
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration5-feelings.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration5-feelings.png}
         \caption{Updated feelings page}
         \label{fig:i5-feelings}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
-New to the application is a page named \emph{Summary}, which is based on showing the average feelings expressed in the last week, month and year. The epicrisis has also been put here as it technically is a summary of a hospital stay. A new part of the procedure page is now the addition of thumbnails that show the current and nearby pages.
+New to the application is a page named \emph{Summary}, which is based on showing the average of each feeling that has been expressed in the last week, month and year. This can be used to convey a general \enquote{mood} or a tendency that lasts for a specific period. The epicrisis has also been put here as it technically is a summary of a hospital stay. A new part of the procedure page is now the addition of thumbnails that show the current and nearby pages, aiming to make each page more recognizable.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \includegraphics[width=0.4\textwidth, frame]{iteration5-summary.png}
-    \caption{Summary page}
-    \label{fig:i5-summary}
-\end{figure}
-
-Concerning the issues raised about the feedback screen, it was apparent that the screen could be made more intuitive. Several alternatives were made; the first one had an extra information label ("not happy", "not sad" etc.) in addition to the right-hand label which was made static. It has the disadvantage of requiring extra space, and without the removal of the informative label, it looked too crammed. The second alternative involved using a line of which its thickness was increasing as you move right, indicating a more intense feeling. The shape is based on the current feedback method used in the hospital and although unconventional, it could work to a certain degree. The third and best alternative involves using colors to determine how intense each feeling is. Now that the sliders are colored on one side only, the initial state is intuitive for the user. The labels have been placed underneath the dots and move together with them, indicating the current value rather than the maximum value.
-
-\begin{figure}
-    \centering
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}[t]{0.4\textwidth}
+        \vspace{0pt}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration5-procedure.png}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration5-summary.png}
+        \caption{Summary page showing an overview of the last week}
+        \label{fig:i5-summary}
+    \end{minipage}
+    \hspace{\fill}
+    \begin{minipage}[t]{0.3\textwidth}
+        \vspace{0pt}
+        \centering
+        \begin{tikzpicture}
+            \tikzfading[name=fade u,top color=transparent!100,bottom color=transparent!0];
+            \tikzfading[name=fade r,right color=transparent!100,left color=transparent!0];
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {
+                \includegraphics[width=\textwidth,frame={\fboxrule} {-\fboxrule}]{iteration5-profile-popup.png}
+            };
+            \fill[white,path fading=fade u] (image.south west) rectangle ($(image.south east)+(0, 50pt)$);
+            \fill[white,path fading=fade r] (image.south west) rectangle ($(image.north west)+(50pt, 0)$);
+        \end{tikzpicture}
+        \caption{Snapshot of popup element when tapping on the avatar icon}
+        \label{fig:i5-profile-popup}
+    \end{minipage}
+    \hspace*{\fill}
+\end{sidewaysfigure}
+
+Concerning the issues raised about the feedback screen, it was apparent that the screen could be made more intuitive. Several alternatives were made; the first one had an extra information label (\emph{not happy}, \emph{not sad} etc.) in addition to the right-hand label which was made static. It has the disadvantage of requiring extra space, and without the removal of the informative label, it looked too crammed. The second alternative involved using a line of which its thickness was increasing as you move right, indicating a more intense feeling. The shape is based on the current feedback method used in the hospital and although unconventional, it could work to a certain degree. The third and best alternative involves using colours to determine how intense each feeling is. Now that the sliders are coloured on one side only, the initial state is intuitive for the user. The labels have been placed underneath the dots and move together with them, indicating the current value rather than the maximum value.
+
+\begin{sidewaysfigure}
+    \centering
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration5-procedure.png}
         \caption{Procedure page with thumbnails}
         \label{fig:i5-procedure}
     \end{minipage}
-    \begin{minipage}{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[width=0.89\textwidth, frame]{iteration5-rating.png}
-        \caption{Ratings with colored sliders}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration5-rating.png}
+        \caption{Ratings with coloured sliders}
         \label{fig:i5-rating}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
-The profile icon reveals an updated popup element rather than a sidebar (\autoref{fig:i5-profile-popup}). This makes sure that unnecessary screen space is not wasted. The aforementioned requested feature, to show a history of ratings, was also experimented with in this iteration. Two alternatives were designed for this purpose as illustrated in \autoref{fig:i5-timeline}.
+The profile icon reveals an updated popup element rather than a sidebar (\autoref{fig:i5-profile-popup}). This makes sure that unnecessary screen space is not wasted. The aforementioned requested feature, to show a history of ratings, was also experimented with in this iteration. Two alternatives, one being a graph representation and the other a list, were designed for this purpose as illustrated in \autoref{fig:i5-timeline}.
+
+For the purpose of illustrating the flow of the application for readers, a flowchart is shown in \autoref{fig:i5-flowchart}. The arrows indicate the flow and the labels describe their actions. The feelings page may appear both inside a procedure and afterwards, when tapping on an emoji. The procedure page acts as an overlay, where exiting it leads the user to the previous screen. Although not explicitly indicated here, the user may freely navigate between related pages such as timeline/procedures/feelings and the procedure pages.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.3\textwidth, frame]{iteration5-profile-popup.png}
-    \caption{Snapshot of popup element when tapping on avatar icon}
-    \label{fig:i5-profile-popup}
+    \includegraphics[width=\textwidth]{screenshot-flowchart.pdf}
+    \caption{Flowchart of the application as of iteration 5}
+    \label{fig:i5-flowchart}
 \end{figure}
 
 \subsection{Analysis}
@@ -354,7 +415,7 @@ The new layout for the procedure page was not really clear either. It was pointe
 
 There seemed to be little gain for the procedure thumbnails as shown in \autoref{fig:i5-procedures}. They were often too small, making it difficult to depict what is happening in each thumbnail, not to mention the thumbnail looks very similar. The focus has been put on something that is hardly visible and takes away from the main purpose of this element; to visualize the user's progress.
 
-As the design has evolved, there are some differences in the designs across the various pages. Some procedures are shown as narrow buttons (\autoref{fig:i5-timeline}) while others have a preview window (\autoref{fig:i5-procedures}). The design should aim for consistency across all pages, but this case in particular lacks consistency. It would be preferrable to stick to one way of representing procedures.
+As the design has evolved, there are some differences in the designs across the various pages. Some procedures are shown as narrow buttons (\autoref{fig:i5-timeline}) while others have a preview window (\autoref{fig:i5-procedures}). The design should aim for consistency across all pages, but this case in particular lacks consistency. It would be preferable to stick to one way of representing procedures.
 
 \section{Iteration 6: Redesign}
 \label{sec:iteration6}
@@ -363,7 +424,7 @@ A complete redesign of the application has been performed in the sixth iteration
 
 The initial idea was to make a prototype using the intended software and architecture and start developing the basis of the application (see \autoref{ch:outline}). This was an idea that turned out to be too time consuming given the time restrictions. Instead, the current approach continues as this iteration also makes use of a graphical prototyping tool.
 
-Contrary to the previous few iterations, the new design has been made using a different prototyping tool. As the previous tool is pretty restrictive when it comes to exporting, the screens had to be made from scratch. Following this change, it made sense to rebuild the design as well, aiming for a more modern and uniform look. It is worth noting that some of the freatures of the previous iterations, while perfectly suitable, have not been ported over to the new platform yet.
+Contrary to the previous few iterations, the new design has been made using a different prototyping tool. As the previous tool is pretty restrictive when it comes to exporting, the screens had to be made from scratch. Following this change, it made sense to rebuild the design as well, aiming for a more modern and uniform look. It is worth noting that some of the features of the previous iterations, while perfectly suitable, have not been ported over to the new platform yet.
 
 The theme is centered around the timeline, a red line with circles acting as the pathway to follow. A new primary colour, a crimson-like variant, has been chosen for the design. The colour fits well for both light and dark backgrounds and can be seen as a reference to the previous PictogramApp which used similar colours. The previous primary colour, which was more of an electric blue, was prone to be problematic when dealing with contrast against light backgrounds.
 
@@ -373,32 +434,36 @@ The procedure labels have been adjusted once more; this time the procedure's tit
 
 As a step in integrating guideline pathways into the application, a new element \emph{veivalg} (path selection) has been introduced. This is displayed whenever the guideline pathway's trajectory splits into several paths and it is uncertain which set of procedures should come up next.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{subfigure}[t]{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.35\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth, frame]{iteration6-timeline.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration6-timeline.pdf}
         \subcaption{Zoomed in}
         \label{fig:i6-timeline-zoomin}
     \end{subfigure}
-    \begin{subfigure}[t]{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.35\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth, frame]{iteration6-pakkeforlop.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration6-pakkeforlop.pdf}
         \subcaption{Zoomed out}
         \label{fig:i6-timeline-zoomout}
     \end{subfigure}
+    \hspace*{\fill}
     \caption{Redesigned timeline}
     \label{fig:i6-timeline}
-\end{figure}
+\end{sidewaysfigure}
 
 The feelings page takes the functionality of \autoref{sec:iteration5}'s summary page, allowing to view a summary of the user's feelings given in the last day, week or month. Procedures yet to be rated will be displayed here as well.
 
-A new page being introduced in this iteration is the profile page. Instead of being encapsulated in an profile icon in the top right corner, the profile now has a dedicated page for the purposes of editing one's avatar, profile info and their login session. If desired, this page may be extended to include contact information, user statistics, information about associated practitioners, et cetera -- without being restricted by space. Accessing the profile now requires only one tap instead of two and as such, this is considered a better alternative to the previous popup element.
+A new page being introduced in this iteration is the profile page. Instead of being encapsulated in a profile icon in the top right corner, the profile now has a dedicated page for the purposes of editing one's avatar, profile info and their login session. If desired, this page may be extended to include contact information, user statistics, information about associated practitioners \emph{et cetera} -- without being restricted by space. Accessing the profile now requires only one tap instead of two and as such, this is considered a better alternative to the previous popup element.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
+    \hspace{\fill}
     \begin{minipage}[t]{0.4\textwidth}
         \centering
         \vspace{0pt}
@@ -406,7 +471,7 @@ A new page being introduced in this iteration is the profile page. Instead of be
         \caption{Redesigned feelings page}
         \label{fig:i6-feelings}
     \end{minipage}
-    \hspace{0.05\textwidth}
+    \hspace{\fill}
     \begin{minipage}[t]{0.4\textwidth}
         \centering
         \vspace{0pt}
@@ -414,29 +479,39 @@ A new page being introduced in this iteration is the profile page. Instead of be
         \caption{Profile page showing the user's avatar}
         \label{fig:i6-profile}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
-Although not too different, the procedure pages have gotten a new look as well. At the bottom is a themed progress indicator, replacing the former thumbnails that were not too good. It still allows for quick navigation with clickable buttons, in case the procedure contains many pages.
+Although not too different, the procedure pages have gotten a new look as well. At the bottom is a themed progress indicator, replacing the former thumbnails that were not too good. It still allows for quick navigation with tappable buttons, in case the procedure contains many pages.
 
-Another step in the redesign is the home page in \autoref{fig:i6-home}, which is redesigned to feature the timeline as both a decorative element and as a cue to the application itself. While mostly an examplification, the application logo and name is displayed at the top with infographics shown below. The logo depicts an avatar being casted into two shades by a half-moon background. It is made to indicate how an avatar is connected, yet differs from the person using it. Inspiration comes from \emph{Åpen II}, a sculpture by Gunnar Torvund which depicts a silhouette of the Norwegian componist Edvard Grieg \parencite{vaage2014}.
+Another step in the redesign is the home page in \autoref{fig:i6-home}, which is redesigned to feature the timeline as both a decorative element and as a cue to the application itself. While mostly an exemplification, the application logo and name is displayed at the top with infographics shown below. The logo depicts an avatar being cast into two shades by a half-moon background. It is made to indicate how an avatar is connected, yet differs from the person using it. Inspiration comes from \emph{Åpen II}, a sculpture by Gunnar Torvund which depicts a silhouette of the Norwegian composer Edvard Grieg \parencite{vaage2014}.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{minipage}[t]{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}[t]{0.35\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth, frame]{iteration6-procedure.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration6-procedure.pdf}
         \caption{Redesigned procedure page}
         \label{fig:i6-procedure}
     \end{minipage}
-    \begin{minipage}[t]{0.45\textwidth}
+    \hspace{\fill}
+    \begin{minipage}[t]{0.35\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth]{iteration6-home.pdf}
+        \begin{tikzpicture}
+            \tikzfading[name=fade u,top color=transparent!100,bottom color=transparent!0];
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {
+                \includegraphics[width=\textwidth,frame={\fboxrule} {-\fboxrule}]{iteration6-home.pdf}
+            };
+            \fill[white,path fading=fade u] (image.south west) rectangle ($(image.south east)+(0, 50pt)$);
+        \end{tikzpicture}
         \caption{Redesigned home page}
         \label{fig:i6-home}
     \end{minipage}
-\end{figure}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
 % Admin app?
 
@@ -469,85 +544,99 @@ The seventh and last iteration leads us to the final prototype used in the evalu
 
 Starting with the onboarding in \autoref{fig:i7-onboarding}, this sequence is centered around the task of getting the user up and running for the application. During the sequence, the user may choose their avatar and be given an introduction to the elements of the timeline page. This introduction is done on the timeline page itself, explaining the various elements to the user as they appear. This is also a good place for making sure the user agrees to the usage of their personal and sensitive data.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
     \captionsetup[subfigure]{justification=centering}
-    \begin{subfigure}[t]{0.19\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.18\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.9\textwidth, frame]{iteration7-onboarding1.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-onboarding1.pdf}
         \subcaption{Terms and conditions}
         \label{fig:i7-onboarding-1}
     \end{subfigure}
-    \begin{subfigure}[t]{0.19\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.18\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.9\textwidth, frame]{iteration7-onboarding2.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-onboarding2.pdf}
         \subcaption{Choosing an avatar}
         \label{fig:i7-onboarding-2}
     \end{subfigure}
-    \begin{subfigure}[t]{0.19\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.18\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.9\textwidth, frame]{iteration7-onboarding3.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-onboarding3.pdf}
         \subcaption{Introducing the timeline}
         \label{fig:i7-onboarding-3}
     \end{subfigure}
-    \begin{subfigure}[t]{0.19\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.18\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.9\textwidth, frame]{iteration7-onboarding4.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-onboarding4.pdf}
         \subcaption{Introducing a procedure}
         \label{fig:i7-onboarding-4}
     \end{subfigure}
-    \begin{subfigure}[t]{0.19\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.18\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.9\textwidth, frame]{iteration7-onboarding5.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-onboarding5.pdf}
         \subcaption{Introducing feelings}
         \label{fig:i7-onboarding-5}
     \end{subfigure}
+    \hspace*{\fill}
     \caption{Onboarding sequence}
     \label{fig:i7-onboarding}
-\end{figure}
+\end{sidewaysfigure}
 
-The comment section request for the rating page has been met as shown in \autoref{fig:i7-rating}. To accomodate for the space needed for the comment section, the explanatory text previously shown on the top of the overlay has been hidden, only to be shown when tapping an information icon on the top right. This comment is reflected in the dropdown element in \autoref{fig:i7-dropdown}, which now also contains eventual measurements made by a physician.
+The comment section request for the rating page has been met as shown in \autoref{fig:i7-rating}. To accommodate for the space needed for the comment section, the explanatory text previously shown on the top of the overlay has been hidden, only to be shown when tapping an information icon on the top right. This comment is reflected in the dropdown element in \autoref{fig:i7-dropdown}, which now also contains eventual measurements made by a physician.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \begin{subfigure}[t]{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth, frame]{iteration7-rating.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-rating.pdf}
         \subcaption{Rating overlay with a comment section}
         \label{fig:i7-rating-1}
     \end{subfigure}
-    \begin{subfigure}[t]{0.45\textwidth}
+    \hspace{\fill}
+    \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \vspace{0pt}
-        \includegraphics[width=0.89\textwidth, frame]{iteration7-rating2.pdf}
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-rating2.pdf}
         \subcaption{Explanatory text when expanded}
         \label{fig:i7-rating-2}
     \end{subfigure}
+    \hspace*{\fill}
     \caption{Updated rating overlay}
     \label{fig:i7-rating}
-\end{figure}
+\end{sidewaysfigure}
 
 A new overlay (\autoref{fig:i7-proceduregroup}) has been made for procedure groups as mentioned above. When tapped, it expands to cover the screen, listing its procedures. These procedures may be rearranged as the user sees fit. Though, this functionality is not interactive in the prototype made in this iteration.
 
-\begin{figure}
+\begin{sidewaysfigure}
     \centering
-    \includegraphics[width=0.4\textwidth, frame]{iteration7-proceduregroup.pdf}
-    \caption{A group containing several, rearrangable procedures}
-    \label{fig:i7-proceduregroup}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.3\textwidth]{iteration7-dropdown.pdf}
-    \caption{The new dropdown element}
-    \label{fig:i7-dropdown}
-\end{figure}
+    \hspace{\fill}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\dimexpr\textwidth-2\fboxrule, frame={\fboxrule}]{iteration7-proceduregroup.pdf}
+        \caption{A group containing several procedures that can be rearranged}
+        \label{fig:i7-proceduregroup}
+    \end{minipage}
+    \hspace{\fill}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{iteration7-dropdown.pdf}
+        \caption{The new dropdown element}
+        \label{fig:i7-dropdown}
+    \end{minipage}
+    \hspace*{\fill}
+\end{sidewaysfigure}
 
 \subsection{Analysis}
 

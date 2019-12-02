@@ -6,9 +6,15 @@ To verify that the design works as intended, a more extensive evaluation of the 
 \section{The test group}
 \label{sec:testgroup}
 
-While it would be beneficial to let the patients---the primary target group---use the final prototype for evaluation purposes, there are several reasons why this is not a good idea. First, patients of this kind are very vulnerable and interaction is better left off for professionals and people with experience or education. Second, the prototype is not fully functional and some actions and gestures are not supported, which could lead to awkward or even harmful moments. Third, the low age of the patients induce a high risk of misunderstandings when it comes to the testing; the prototype can easily mistaken for a final product and a patient may not necessarily understand that the situation is a general case and not tailored to their current situation, possibly leading to further misunderstandings.
+While it would be beneficial to let the patients---the primary target group---use the final prototype for evaluation purposes, there are several reasons why this is not a good idea:
 
-At Haukeland University Hospital, a youth council has been set up to represent and voice for the younger patients. A member of this council will, together with Thorsen, form the test group for this evaluation. The group consists of ages significantly higher than the intended target group.
+\begin{itemize}
+    \item First, patients of this kind are very vulnerable and interaction is better left off for professionals and people with experience or education.
+    \item Secondly, the prototype is not fully functional and some actions and gestures are not supported, which could lead to awkward or even harmful moments.
+    \item Thirdly, the low age of the patients induce a high risk of misunderstandings when it comes to the testing; the prototype can easily mistaken for a final product and a patient may not necessarily understand that the situation is a general case and not tailored to their current situation, possibly leading to further misunderstandings.
+\end{itemize}
+
+At Haukeland University Hospital, a youth council has been set up to represent and voice for the younger patients. The youth council is an advisory body with a mission to help the hospital to reach goals that children and youth have. A member of this council will, together with senior consultant psychiatrist Thorsen, form the test group for this evaluation. Although the group consists of ages significantly higher than the intended target group, both subjects have ample knowledge about treatment of children in hospitals.
 
 % Whom to ask questions
 
@@ -19,7 +25,14 @@ At Haukeland University Hospital, a youth council has been set up to represent a
 
 The evaluation took place in a meeting room at the Children and Youth Clinic. The interaction with the application was done through an Apple iPad as the test subjects were observed. During the evaluation, the subjects were free to use the prototype as they wanted and intervention was kept to a minimum; in other words, they were not directed into making choices. Still, both subjects were informed that they could initiate questions and give comments at any time. Some questions, if not already answered, were given afterwards as a form of semi-structured interviews. Notes were written on a laptop by the side together with a stopwatch for measuring the time spent with the prototype.
 
-Some elements had to be clarified as they were not part of the prototype themselves. The first detail was a skip button placed on the lower right corner of the screen that was used to skip ahead in time. Normally the user would have to wait until each procedure has passed until they can rate it, so instead of waiting, the subjects could skip to the next point. Another detail being that procedures in \autoref{fig:i7-proceduregroup} can not be rearranged although that is the intention. A third detail is the aforementioned rating screen where the sliders are not slideable, and the most predictable solution for the prototype is to show a pre-defined scoring after one tap. Lastly, the prototype was restricted to the first two phases only, and some funcitonalities were not made interactive.
+Some elements had to be clarified as they were not part of the prototype themselves: 
+
+\begin{itemize}
+    \item The first detail was a skip button placed on the lower right corner of the screen that was used to skip ahead in time. Normally the user would have to wait until each procedure has passed until they can rate it, so instead of waiting, the subjects could skip to the next point.
+    \item Another detail being that procedures in \autoref{fig:i7-proceduregroup} can not be rearranged although that is the intention. 
+    \item A third detail is the aforementioned rating screen where the sliders can not be properly interacted with, and the most predictable solution for the prototype is to show a pre-defined scoring after one tap. 
+    \item Lastly, the prototype was restricted to the first two phases only, and some functionalities were not made interactive.
+\end{itemize}
 
 The prototype was split up into 'states' in order to prevent accidental backtracking. The initial state is before skipping time; the second state being after. A third state is introduced after rating the procedure as to not lose said rating. Errors in the prototype were commented and corrected during the evaluations, with the subject being immediately redirected to the intended screen.
 
@@ -27,9 +40,9 @@ The prototype was split up into 'states' in order to prevent accidental backtrac
 
 Both test subjects had a positive perception of the prototype. They reported it to be easy to use, informative and self explanatory. Comments were mostly positive although some suggestions were given for further development.
 
-The subjects found the visual style to be simple, clear and visually attracting. Despite the simplicity, the subjects had few problems finding out where to navigate and which buttons to tap. The onboarding sequence was followed with ease, each step bringing the subject to the next one. Some buttons, or rather clickable areas, were a bit small and did not activate despite the user tapping said buttons.
+The subjects found the visual style to be simple, clear and visually attracting. Despite the simplicity, the subjects had few problems finding out where to navigate and which buttons to tap. The onboarding sequence was followed with ease, each step bringing the subject to the next one. Some buttons, or rather tappable areas, were a bit small and did not activate despite the user tapping said buttons.
 
-The timeline pages were understood by the subjects, although one of them assumed that the elements of the guideline pathway (see \autoref{fig:i6-timeline-zoomout}) were clickable, which they were not and indeed should have been. However, what was not anticipated was that the subject also tapped the circles of the timeline, expecting to enter a guideline pathway phase or to open a procedure.
+The timeline pages were understood by the subjects, although one of them assumed that the elements of the guideline pathway (see \autoref{fig:i6-timeline-zoomout}) were tappable, which they were not and probably should have been, considering the subject had a pretty disappointed reaction. However, what was not anticipated was that the subject also tapped the circles of the timeline, expecting to enter a guideline pathway phase or to open a procedure.
 
 The subjects found the procedure pages to be straightforward, but also a better alternative to a text-only representation. One of the subjects had the following comment:
 
@@ -47,4 +60,4 @@ One of the subjects commented that the application could be used to explain medi
 
 The subjects spent 11.5 minutes and 12.5 minutes fiddling with the prototype. The first subject investigated each screen before moving on (similar to a breadth-first search), however the second subject followed the flow in a depth-first manner and proceeded to rating the procedure before discovering other pages of the application. Opinions regarding performance and responsiveness were of less importance as the prototype was not made with the intended architecture; i.e. it was not built upon a codebase. The prototype tool had some issues transitioning between pages at the intended speed, and unresponsiveness made the subjects confused at some points.
 
-An area that was yet to be inquired is one of \enquote{trustability}; of which degree the user would trust the application and let it process their data. Therefore, the following question was asked: \enquote{Would you trust this application?} The subjects were positive to it, although one of them had a slight concern regarding the risk of data loss as a result of hacking. The issue of security is mentioned as an anticipated challenge in \autoref{sec:anticipatedchallenges}. Another conern was about visibility of their personal data -- who would have access to their journal? The journal should be restricted to certain members of the staff who have a reason to look into the data. The journal system at Helse Bergen currently uses an \emph{access log} of which the user can see who have accessed their journal. Investigating the possibility to use and display this log is an idea for future development.
+An area that was yet to be inquired is one of \enquote{trustability}; of which degree the user would trust the application and let it process their data. Therefore, the following question was asked: \enquote{Would you trust this application?} The subjects were positive to it, although one of them had a slight concern regarding the risk of data loss as a result of hacking. The issue of security is mentioned as an anticipated challenge in \autoref{sec:anticipatedchallenges}. Another concern was about visibility of their personal data -- who would have access to their journal? The journal should be restricted to certain members of the staff who have a reason to look into the data. The journal system at Helse Bergen currently uses an \emph{access log} of which the user can see who have accessed their journal. Investigating the possibility to use and display this log is an idea for future development.
