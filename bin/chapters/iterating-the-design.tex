@@ -1,12 +1,12 @@
 \chapter{Iterating the design}
 \label{ch:iterating}
 
-Once the requirements are established, the iterative process of the design development begins. Each iteration works as a distinct step towards the final design of the application, from bare-bone paper sketches to high fidelity prototypes.
+Once the basic requirements are established, the iterative process of the design development begins. More detailed requirements will emerge as a result of the feedback and communication in the iterative design process. Each iteration works as a distinct step towards the final design of the application, from bare-bone paper sketches to high fidelity prototypes.
 
 \section{Iteration 1: Paper sketches}
 \label{sec:iteration1}
 
-The version made in the first iteration is also the simplest, made with pencil and printed sheets of paper. It illustrates two sides of the application: in the first, the user enters a procedure and evaluates it (\autoref{fig:sketch-viewprocedure}), a common use case in this application. The procedures are shown in a \emph{previously used} list, showing the smiley if rated. Each procedure can be viewed as a cartoon comic with a horizontal, scrollable sequence of frames. The user will be able to scroll across the whole procedure from left to right and to put each frame in focus, essentially becoming a step-to-step tutorial. This is a good way to get an overview of the procedure on its own, but it provides less interaction than if the user would, say, walk through the steps in a game-like approach. At the end of the procedure, the user is prompted to express their experience through use of smileys, a method proven to be quite successful \parencite{stalberg2016}. The rating system is very basic and simple to understand for children, containing only a sad, neutral and a happy face.
+The version made in the first iteration is also the simplest, made with pencil and printed sheets of paper. It illustrates two sides of the application: in the first, the user enters a procedure and evaluates it (\autoref{fig:sketch-viewprocedure}), a common use case in this application. The procedures are shown in a list and if a procedure has been rated, a smiley will be shown. Each procedure can be viewed as a cartoon comic with a horizontal, scrollable sequence of frames. The user will be able to scroll across the whole procedure from left to right and to put each frame in focus, essentially becoming a step-to-step tutorial. This is a good way to get an overview of the procedure on its own, but it provides less interaction than if the user would, say, walk through the steps in a game-like approach. At the end of the procedure, the user is prompted to express their experience through use of smileys, a method proven to be quite successful \parencite{stalberg2016}. The rating system is very basic and simple to understand for children, containing only a sad, neutral and a happy face.
 
 In the second side of the application, the sketches illustrate how a procedure may be edited by an authorized user (\autoref{fig:sketch-editprocedure}). The process involves creating frames, inserting elements and modifying them. A toolbar is shown at the top with a varying amount of buttons, showing only the ones that are relevant for the current situation. Compared to PictogramApp, the interface is supposed to be more drag-and-drop oriented with possibilities to drag pages between each other. Another improvement is that elements must be clicked/tapped before they can be modified.
 
@@ -47,7 +47,7 @@ The editing part of the design is also imagined through a touch interface. The m
 \section{Iteration 2: Form study prototype}
 \label{sec:iteration2}
 
-The second iteration yielded a form study prototype, a prototype with more focus on geometry and less focus on colours and detail. It shares many similarities with a wireframe. The prototype is also the first one made with a digital prototyping tool, allowing a higher fidelity despite the simplicity in the current design.
+The second iteration yielded a form study prototype that shares many similarities with a wireframe. The prototype is also the first one made with a digital prototyping tool, allowing a higher fidelity despite the simplicity in the current design.
 
 Contrary to the first prototype, this is designed for portrait mode. It keeps the two-folded design of the home page, with a collapsable hamburger menu on the left and a list of procedures on the right as shown in \autoref{fig:i2-home}. Procedures may be filtered by their category such as \emph{treatments} and \emph{conversations}.
 
@@ -438,6 +438,8 @@ Another step in the redesign is the home page in \autoref{fig:i6-home}, which is
     \end{minipage}
 \end{figure}
 
+% Admin app?
+
 \subsection{Analysis}
 
 One of the first things that was noticed was the choice of wording of the path selection element in \autoref{fig:i6-timeline-zoomin}. Roughly translated, it becomes the following:
@@ -451,7 +453,7 @@ The problem is that this is not how it works; the patient should be the one to d
 Some new functionalities have been requested for the upcoming iteration:
 
 \begin{itemize}
-    \item So far, measurements made during a procedure (\autoref{sec:requirements}) have not been taken into consideration yet. While the dropdown element has worked well since its integration, there is a request for adding information about measurements to it. The hospital staff may perform various measurements such as blood pressure and body temperature, and the dropdown element seems like a suitable place for these measurements.
+    \item So far, measurements made during a procedure (see \autoref{sec:requirements}) have not been taken into consideration yet. While the dropdown element has worked well since its integration, there is a request for adding information about measurements to it. The hospital staff may perform various measurements such as blood pressure and body temperature, and the dropdown element seems like a suitable place for these measurements.
 
     \item The rating overlay should include a comment section where the user may give their opinion of a procedure through text. This would enable more extensive feedback from patients. The overlay has remained unchanged since \autoref{fig:i5-rating}.
     

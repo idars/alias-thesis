@@ -1,0 +1,76 @@
+\lstinputlisting[language=Java, caption=An example, label=lst:example]{example.java}
+
+\begin{table}
+    \centering
+    \begin{tabular}{Sl Sl Sl}
+        Flutter & Google & C-like syntax \\
+        React Native & Facebook & JavaScript \\
+    \end{tabular}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabularx}{\textwidth}{X X X X X}
+        & \textbf{2D images} & \textbf{2D image sets with pre-rotated poses} & \textbf{2D images rotated in 3D} & \textbf{3D models} \\
+        \textbf{Realism} & Lowest & High & Low & Highest \\
+        \textbf{Processing power} & Lowest & Low & High & Highest \\
+        \textbf{Ease of use} & Highest & High & Low & Lowest \\
+    \end{tabularx}
+    \caption{Different ways to project an avatar on a screen}
+    \label{tab:projecting-avatar}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabu}{l l L}
+        \textbf{Type} & \textbf{Framework} & \textbf{Description} \\
+        \hline
+        Native            & Flutter            & Uses the Dart language; has support for hot reloading \\
+                          & Xamarin            & C\# and F\#; stable and robust framework \\ 
+                          & React Native       & A mobile equivalent of React, focusing on Single Page Applications (SPAs) \\
+        \tabucline[hdottedline]{-}
+        Hybrid            & Adobe PhoneGap     & A traditional HTML/CSS/JavaScript framework \\
+                          & Apache Cordova     & The open source equivalent of PhoneGap. \\
+                          & Framework7         & \\
+        \tabucline[hdottedline]{-}
+        Web               & AngularJS 2        & \\
+                          & React              & \\
+                          & Iconic             & \\
+                          & Electron           & \\
+        \hline
+    \end{tabu}
+    \caption{Select frameworks for mobile application development}
+    \label{tab:frameworks}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabu}{l l L}
+        \textbf{Framework} & \textbf{Functionality} & \textbf{Description} \\
+        \hline
+        Apache Cordova     & App wrapper \& deployment & \\
+        \tabucline[hdottedline]{-}
+        Adobe PhoneGap     & App wrapper \& deployment & \\
+        \tabucline[hdottedline]{-}
+        Framework7         & Navigation \& UI & \\
+        \tabucline[hdottedline]{-}
+        Angular            & Navigation       & \\
+        \tabucline[hdottedline]{-}
+        Ionic              & Navigation \& UI & \\
+        \tabucline[hdottedline]{-}
+        React              & UI               & JavaScript and JSX (HTML-like syntax represented as JavaScript objects) \\
+        \tabucline[hdottedline]{-}
+        Bootstrap          & UI               & \\
+        \tabucline[hdottedline]{-}
+        Onsen              & UI               & \\
+        \tabucline[hdottedline]{-}
+        Polymer            & UI               & \\
+        \tabucline[hdottedline]{-}
+        Semantic UI        & UI               & \\
+        \hline
+    \end{tabu}
+    \caption{Select frameworks for hybrid mobile application development}
+    \label{tab:frameworks}
+\end{table}

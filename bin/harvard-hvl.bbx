@@ -49,7 +49,7 @@
 }
 
 % Remove quotation marks from titles in journal entries
-\DeclareFieldFormat[article, incollection]{title}{#1}
+\DeclareFieldFormat[article, inbook, incollection]{title}{#1}
 
 % Append "[Internet]" to title in online entries
 \DeclareFieldFormat[online]{title}{%
@@ -65,8 +65,36 @@
 }
 \DeclareFieldFormat[misc]{type}{}
 
-% Suppress "In:" from journal entries
-\renewbibmacro{in:}{}
+\renewbibmacro{in:}{%
+    % Suppress "In:" from journal entries
+    \ifentrytype{article}{
+        % Do nothing
+    }{%
+        % Show editors in front of book/collection/proceedings
+        \printtext{\bibstring{in}\intitlepunct}%
+        \ifnameundef{bookauthor}{%
+            \ifnameundef{editor}{%
+                \printnames{translator}%
+                \setunit{\space}%
+                \usebibmacro{translator+othersstrg}%
+                \clearname{translator}
+            }{%
+                \printnames{editor}%
+                \setunit{\space}%
+                \usebibmacro{editor+othersstrg}%
+                \clearname{editor}
+            }
+        }{%
+            \ifnamesequal{author}{bookauthor}{%
+                % Do nothing
+            }{%
+                \printnames{bookauthor}%
+                \clearname{bookauthor}
+            }
+        }%
+        \newunit\newblock
+    }
+}
 
 % Remove period between volume and number in journal entries
 \renewbibmacro{volume+number+eid}{%
@@ -142,6 +170,9 @@
 % Make titles bold rather than italic
 % Also removes quotation marks
 \DeclareFieldFormat[book, report, thesis, unpublished]{title}{%
+    \mkbibbold{#1}
+}
+\DeclareFieldFormat{booktitle}{%
     \mkbibbold{#1}
 }
 \DeclareFieldFormat{journaltitle}{%

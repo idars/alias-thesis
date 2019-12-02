@@ -1,5 +1,4 @@
 {  
-  "cSpell.enabled": true,
   "editor.cursorBlinking": "solid",
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 80,
@@ -10,5 +9,8 @@
   "latex-workshop.synctex.synctexjs.enabled": true,
   "latex-workshop.view.pdf.viewer": "tab",
   "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false
+"telemetry.enableTelemetry": false,
+"cSpell.words": [
+    "centered"
+]
 }
