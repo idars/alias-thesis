@@ -6,37 +6,44 @@ The conclusion is based on several factors, including the evaluation of the fina
 \section{Discussion}
 \label{sec:discussion}
 
-% Arguments for why the conclusion is as such, what went right and what went wrong
+The biggest factor is the evaluation of the final prototype. It follows a methodology based on an iterative design process that is evaluated using a usability test combined with semi-structured interviews. This evaluation was positive as the subjects found the prototype to be easy to use, informative and self explanatory. There is quite a potential for the application as procedures can be illustrated graphically and, if suggestions from the evaluation are followed up, can explain medical terminology that is used in the handed-out information. In summary, the evaluation showed that both the design and the concept altogether are working well.
 
-The biggest factor is the evaluation of the final prototype. As this evaluation was mainly positive, 
+With this outcome, the research question can be considered as answered. Building upon national guideline pathways, the resulting prototype has the potential to offer a more personalized experience for children and youth. Despite guideline pathways being standardized, this project provides an insight in how they can be made more personal and engaging.
 
+Looking at the aims that were set in \autoref{sec:researchquestion}, the progress of the application needs to considered. The first aim:
 
+\begin{quote}
+    (...) to look at how the information from hospitals may be formed and the way it is given, and adjust this information flow such that it is more engaging and understandable for children and youth.
+\end{quote}
 
-The aims that were set in \autoref{sec:researchquestion} have been accomplished. 
+can be considered achieved as the design is a result of an iterative process, constantly improving upon the shape of how information about procedures are shown. The design was also shown to be engaging and understandable in the evaluation. The second aim:
 
-The means of the evaluation could have been better, most notably the target group which has little resemblance to the actual target group. As previously stated (\autoref{sec:testgroup}), this was due to several risks combined with the prototype. However, as one of the subjects is a senior consultant psychiatrist and the other subject is a member of the hospital's youth council, the evaluation has a certain value. Looking back, a possible improvement would be to evaluate the prototype with a group of non-hospitalized children who are aware of the difference between an unfinished prototype and a finished product.
+\begin{quote}
+    (...) to facilitate how children and youth may participate in decision-making and give feedback about their treatment as a step in personalizing the treatment itself.
+\end{quote}
 
-It would also have been preferred if a prototype built on the intended architecture was made. Only code-less prototypes were made, focusing on the design rather than the implementation. Time was the biggest factor as to why a software implementation was only planned but not attempted. This part has not been evaluated in any form and therefore is not a factor to the conclusion.
+is rather doubtful as the application stands. Although the feedback part has been thoroughly explored, decision-making has been given less precedence. Apart from viewing procedures, there are only a few places in the application that encourages decision-making, one being procedures that can be rearranged (see \autoref{fig:i7-proceduregroup}) and another being \emph{veivalg} (path selection) (see \autoref{sec:iteration6}). Feedback can be considered a part of decision-making, but a small one at that. As it stands, this is an area of responsibility primarily left for health professionals and parents.
+
+% As this project has not led to any immediate effect for hospitalized children and youth, . If only the design process were to be considered while ignoring current inpatient situations, this would be considered achieved as well.
 
 \section{Reflections}
 \label{sec:reflections}
 
-% Things to consider
+The means of the evaluation could have been better, most notably the target group which has little resemblance to the actual target group. As previously stated (\autoref{sec:testgroup}), this was due to several risks combined with the prototype. However, as one of the subjects is a senior consultant psychiatrist and the other subject is a member of the hospital's youth council, the evaluation has a certain value. Looking back, a possible improvement would be to evaluate the prototype with a group of non-hospitalized children who are aware of the difference between an unfinished prototype and a finished product.
 
-
-
-
+It would also have been preferred if a prototype built on the intended architecture was made. Only code-less prototypes were made, focusing on the design rather than the implementation. Time was the biggest factor as to why a software implementation was only planned but not attempted.
 
 \section{Further work}
 \label{sec:furtherwork}
 
-(...)
+Due to the application being only a prototype, further work involves an implementation of the application. Though, there are also several parts of the design and planning that can be improved.
 
-\subsection{Design and planning}
+Some of the elements of the design have not been carried over since the earlier iterations, e.g. the graph and list representations of a procedure's rating history (\autoref{fig:i5-timeline}). These can be combined into the current design, enhancing it.
 
-(...)
-% 'Merge' guideline pathways
+As stated in the evaluation, there are several wishes to the design. One would be to explain medical terminology, possibly with a popup element explaining each term when tapped. Another possible improvement would be to look into the procedure group overlay and integrate it into the timeline view or make the overlay easier to navigate.
 
-\subsection{Development}
+A requested feature not mentioned yet is the ability to participate in several guideline pathways and have a unified view of them. This would involve viewing procedures from both pathways at the same time, scheduled along the timeline. That is, if this situation is technically feasible. That ultimately depends on the hospital systems, and the integration between them if that is an option.
 
-(...)
+As for the planning, the architecture does not take scaling into consideration, and making it scalable involves software and technology not mentioned in this thesis. The transparency of cloud solutions can alternatively be considered. Depending on whether the system must be hosted locally or not, this has to be thought of beforehand.
+
+Other than a mere static web page built for testing purposes, there is currently no implementation of the application. The implementation and planning of it is described in \autoref{ch:outline} and \autoref{ch:tools} but the implementation itself is left for further work. That being said, the choice of tools is made on the basis of several aspects, including Helse Vest IKT's preference of languages and the requirements from the Children and Youth Clinic. If these change, the desired form of the application may change as well. This will remain for a later time.
