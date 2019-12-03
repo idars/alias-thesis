@@ -9,5 +9,7 @@ Helse Vest IKT
 screenshot
 screenshots
 setup
+smartphone
+smartphones
 tappable
 Thorsen

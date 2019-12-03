@@ -1,33 +1,38 @@
 \chapter{Planning the design}
 \label{ch:planning}
 
-This chapter deals with the initial planning of the design, where the most important factors are considered.
+This chapter deals with the initial planning of the design, where the most important factors are taken into consideration.
 
 \section{Inspiration}
+\label{sec:inspiration}
 
-The PictogramApp application, of which the master project will primarily be based on, allows users to create their own \emph{stories} consisting of an arbitrary number of \emph{scenes}. These concepts can be applied to the new application, though they will be named as \emph{procedures} and \emph{steps} respectively.
+The PictogramApp application, of which the master project will primarily be based on, provides a foundation for this project to build upon. In PictogramApp, users may create their own \emph{stories} consisting of an arbitrary number of \emph{scenes}. Pictograms may then be added and placed in each scene, creating a story. These concepts can be applied to the new application albeit with different names (see \autoref{sec:domain}).
 
-(...)
+Inspiration has also been obtained from social media platforms where children and youth make up an notable part of the user base. \emph{Reactions}, often seen in social media and messaging platforms, are a way to interact with a message and express an opinion about it without giving a textual reply. A classic example is Facebook's Like button which has since been expanded to include emojis and other visual content. The concept of reactions can be joined into the design to make it more attractive for children and youth.
 
 \section{Target groups}
+\label{sec:targetgroups}
 
-As the requirements reveal, the application is intended for several users. It is therefore important to know who these users may be. For this project, these users are described in form of target groups.
+The application is intended for several kinds of users. It is therefore important to know who these users may be. For this project, these users are described in form of mutually exclusive target groups:
 
-The primary target group will be children and youth at the clinic with ages raging from 5 to 12. The content of the application must therefore be adapted to the target group and be suitable for their age.
+\begin{itemize}
+    \item The primary target group will be children and youth at the clinic with ages raging from 5 to 12. The content of the application must therefore be adapted to the target group and be suitable for their age.
+    \item The second target group will be health professionals and staff at the clinic. This includes physicians, practitioners, consultants, medical assistants and other people working with healthcare.
+    \item A third target group is relatives and parents of patients. This group is worth considering as they do have an influence for the patient's stay. In fact, it is common for parents to participate in decision-making matters for children aged below 16 years \autocite{helsedirektoratet2018}.
+\end{itemize}
 
-The second target group will be the staff at the clinic. This includes physicians, practicioners, consultants, medical assistants and other people working with healthcare.
-
-A third target group is relatives and parents of patients. This group is worth considering as they do have an influence for the patient's stay. In fact, parents contribute to decision-making for most children.
-
-An essential plan when it comes to the design of the application is to let children of the intended age group test it in various stages of its development. Their input is valuable since it can contribute to making the application age-appropriate \autocite{stalberg2016}.
+% When it comes to the design process of the application, the plan is to let children of the intended age group test it in various stages of its development. Their input is valuable since it can contribute to making the application age-appropriate \autocite{stalberg2016}.
 
 \section{Domain}
+\label{sec:domain}
 
 The domain of the application is centered around healthcare and treatment of patients.
 
 % Pakkeforløp (...)
 
 Given that the application will be used in a hospital setting, the associated terminology will be extended to the application.
+
+The concepts of PictogramApp (stories and scenes) are carried over to the application as well while named as \emph{procedures} and \emph{steps} respectively.
 
 A class diagram of the domain is shown in \autoref{fig:domain1}, illustrating core concepts the application may have to deal with. As some concepts do not have proper English translations, both Norwegian and English names are displayed to avoid confusion.
 
@@ -48,7 +53,7 @@ The scope of this project will be restricted, involving minimal integration with
 \section{Requirements}
 \label{sec:requirements}
 
-The first step of the interaction design lifecycle is centered around establishing requirements. This involves having a dialog with the client, getting an idea of what they expect and correcting the requirements if they change. \textcite{preece2015} lists out two aims of a requirement activity:
+The first step of the interaction design life cycle is centered around establishing requirements. This involves having a dialogue with the client, getting an idea of what they expect and correcting the requirements if they change. \textcite{preece2015} lists out two aims of a requirement activity:
 
 \begin{quote}
     One aim is to understand as much as possible about the users, their activities, and the context of that activity, so the system under development can support them in achieving their goals. Building on this, our second aim is to produce a set of stable requirements that form a sound basis to start designing.

@@ -32,21 +32,26 @@ This process may function as a initial part of the application development. Idea
 \section{Interaction design}
 \label{sec:interactiondesign}
 
-The idea of iterating a design while putting the user in the front seat is also key in interaction design. As the name suggests, this method is about emphasizing and facilitating interaction between humans and computers. Close monitoring by user testing is important to see if interactions with an application succeed. \textcite{preece2015} developed a lifecycle model for interaction design that can illustrate the iterative process used in this project. This model is shown in \autoref{fig:interactiondesign}. (...)
+The idea of iterating a design while putting the user in the front seat is also key in interaction design. As the name suggests, this method is about emphasizing and facilitating interaction between humans and computers. Close monitoring by user testing is important to see if interactions with an application succeed. \textcite{preece2015} developed a life cycle model for interaction design that can illustrate the iterative process used in this project. The model, which is shown in \autoref{fig:interactiondesign}, consists of four phases:
 
-% Forklar mer
+\begin{description}
+    \item[Establishing requirements] is the first phase, focusing on getting to know the user and their needs.
+    \item[Designing alternatives] is where different approaches to the problem are explored. This can be considered a brainstorming session.
+    \item[Prototyping] is the process of further developing the alternative, creating an interactive artefact---a prototype---that can be evaluated.
+    \item[Evaluating] is then performed, leading to an indication of whether the design meets the user's needs.
+\end{description}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{interaction-design-lifecycle-model.pdf}
-    \caption{Interaction design lifecycle model}
+    \caption{Interaction design life cycle model}
     \label{fig:interactiondesign}
 \end{figure}
 
 \section{Prototyping}
 \label{sec:prototyping}
 
-A prototype in this sense is an early version of the product or the application. It does not mean that the prototype needs to be interactive, although a prototype certainly may be. During an iterative design process, each iteration leads to a new and improved prototype that may be tested. Basic prototypes with plain visuals are called \emph{low fidelity} while more polished prototypes are \emph{high fidelity}. Following are a few types of prototypes mentioned in this document:
+A prototype in this sense is an early version of the product or the application. It does not mean that the prototype needs to be interactive, although a prototype certainly may be. During an iterative design process, each iteration leads to a new and improved prototype that may be tested. Basic prototypes with plain visuals are called \emph{low fidelity} while more polished prototypes that resemble a final application more closely are \emph{high fidelity}. Following are a few types of prototypes mentioned in this document:
 
 \begin{description}
     \item[Form study prototype] is a prototype with more focus on geometry and less focus on colours and detail. Prototypes are normally considered low-fidelity at this stage.
@@ -58,7 +63,9 @@ A prototype in this sense is an early version of the product or the application.
 
 Prototypes may be made with a wide selection of tools. The most basic ones may be created by simply using pen and paper. This may be sufficient to create something interactive, using several sheets of paper to change the prototype's appearance.
 
-Dedicated prototyping software come in handy for more high-fidelity prototypes. Most prototyping applications are based on a set of screens with hotspots linking them together. A hotspot defines an area to click or tap on, leading the user to the desired screen -- optionally coupled with an animation.
+Dedicated prototyping software come in handy for more high-fidelity prototypes. Most prototyping applications are based on a set of screens with hotspots linking them together. A hotspot defines an area to click or tap on, leading the user to the desired screen -- optionally coupled with an animation. Little to no code is involved in making such prototypes.
+
+Creating prototypes with the intended software and architecture is a possibility, although more time consuming, as the prototype is built with tools that are not primarily meant for prototyping. The time spent on making a prototype, especially in the first few iterations, should not be too high in case the client is not satisfied -- in which case the efforts put in are nullified. This approach is more useful when the design process is nearing its end and the architecture is well thought of.
 
 % To begin with, \emph{Marvel} is used as a prototyping tool in this project. Later on, the design process makes use of \emph{Figma}, a flexible prototyping tool
 
