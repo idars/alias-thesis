@@ -28,13 +28,14 @@ Determining which approach to use requires paying attention to several factors: 
 Based on this, mobile and desktop applications are considered to be less suitable. Although mobile application frameworks make it possible to transpile JavaScript into native code, the syntaxes vary greatly and may not suit developers who are more familiar with web development. This leads us to two remaining approaches:
 
 \begin{itemize}
-    \item The first approach is based on hybrid applications, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
+    \item The first approach is based on hybrid applications, using HTML, CSS and JacaScript. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
     \item The second approach is through web applications which run in web browsers. There is always the possibility to enhance a web application, turning it into a Progressive Web Application. The application must be run through a web browser or through an app shortcut if a PWA is made.
 \end{itemize}
 
 % Although only 2D images are currently supported, it seems reasonable to pick an approach that allow more extensive functionality if desired.
 
-Given that both hybrid applications and web applications use web browsers (WebViews) to show content on the screen, their performances are assumed to be comparable. The main difference is how a hybrid application is dependent on an app store whereas a web application is dependent on a website. In this case, a self-running application will require less server and networking resources. Comparing hybrid applications and PWAs, both support offline content, although the technology used for this in PWAs are still in an experimental state.
+A \emph{WebView} is a browser instance that can be used by an application.
+Given that hybrid applications are typically based on WebViews while web applications use a web browser (which internally uses WebViews) to show content on the screen, their performances are assumed to be comparable. The main difference is how a hybrid application is dependent on an app store whereas a web application is dependent on a website. In this case, a self-running application will require less server and networking resources. Comparing hybrid applications and PWAs, both support offline content, although the technology used for this in PWAs are still in an experimental state.
 
 % Based on the reflections above, a Progressive Web Application is considered to be less suitable for this project.
 
@@ -72,7 +73,7 @@ Next to consider is frameworks. Frameworks allow developers to develop an applic
     \label{tab:frameworks}
 \end{table}
 
-The most common way to make a hybrid application is to use an app wrapper. Apache Cordova is the original concept while Adobe PhoneGap is an extension to Cordova and acts much the same with some additional features.
+The most common way to make a hybrid application is to use an app wrapper. An application made with HTML, CSS and JavaScript can then be wrapped inside a WebView and compiled as applications for Android, iOS and other destinations. Note that the end result is slower than a pure native solution which uses native functionality provided by the respective operating system. Apache Cordova is an example of an app wrapper while Adobe PhoneGap is a commercial extension and acts much the same with some additional features.
 
 It is unknown which frameworks the web developers of Helse Vest IKT have used previously, if any. A starting point is to assume that the aforementioned developers is well versed with HTML, CSS and JavaScript and have some prior experience with popular web frameworks. Any framework used for the project should therefore be easy to learn for any person skilled in HTML, CSS and JavaScript.
 
@@ -81,25 +82,3 @@ The frameworks listed in \autoref{tab:frameworks} should be easy enough for said
 Looking at the general picture, both aforementioned approaches would be suitable. Ultimately it is a matter of preference, as Helse Vest IKT will probably have an opinion of which setup they are the most comfortable with. The deciding factor, though, is whether the application is meant to be public or for use at the hospital only. Judging by the non-functional requirements, the application is supposed to be restricted by which devices it may run on. Such restrictions are best achieved through a web application that does not depend on an app store, and a web application is therefore considered the best approach at this stage.
 
 % \section{Storage}
-
-
-% Where the application should be stored architecture
-% SQL vs NoSQL
-
-% JSON
-
-% Lagringsmessig vil historier være serialiserte og kunne lagres i databaser. For å overføre historier kan de sendes i form av JSON-strenger som vil beskrive informasjon som
-
-% - Paneler
-% 	- Antall paneler, evt. navn på disse
-% 	- Størrelse på panel(er)
-% - Piktogram/avatar
-%     - Plassering
-% 	- Rotasjon
-% 	- Størrelse
-% 	- Om piktogrammet/avataren er speilvendt
-% 	- Farge
-% - Bakgrunn
-%     - Farge eller bilde
-
-% JSON kan også benyttes til å overføre kontoinformasjon, innstillinger og lignende. Bilder og piktogrammer overføres som filer.

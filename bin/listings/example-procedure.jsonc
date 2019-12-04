@@ -1,0 +1,49 @@
+{
+    "procedure": {
+        "title": "Test procedure",
+        "modifiedAt": "2019-06-30 17:32:23GMT+2",
+        "scheduledAt": "2019-07-07 10:00:00GMT+2",
+        "pages": [
+            {
+                "type": "drawing",
+                "data": [
+                    // Further data describing the drawn procedure along with avatars
+                ]
+            },
+            {
+                "type": "video",
+                "source": "https://youtu.be/(...)"
+            },
+            {
+                "type": "image",
+                "source": "https://(...)"
+            }
+        ],
+        "measurements": {
+            "publishedAt": "2019-07-08 08:40:33GMT+2",
+            "comment": "Test measurements",
+            "data": [
+                {
+                    "name": "Blood pressure",
+                    "value": "120/80",
+                    "unit": "mmHg"
+                }
+            ]
+        },
+        "rating": {
+            "ratedAt": "2019-07-07 12:01:50GMT+2",
+            "comment": "Test rating",
+            "data": [
+                {
+                    "name": "happy",
+                    "value": 60
+                },
+                {
+                    "name": "sad",
+                    "value": 24
+                }
+                // Other feelings (fear, anger, disgust)
+            ]
+        }
+    }
+}

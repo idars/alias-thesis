@@ -23,6 +23,8 @@ A revised and more detailed domain model is shown in \autoref{fig:domainmodel2}.
     \label{fig:domainmodel2}
 \end{figure}
 
+Attached to this thesis are Figma project files for the client and administrator applications. The former is interactive and the one used in this project's evaluation. The design provided here can be of usefulness when deciding on performing an implementation.
+
 \section{Architecture}
 
 The architecture follows a similar pattern to many production-scale web applications, being based on web- and application servers. The web servers are exposed through a firewall, making them accessible through a web browser. Following the non-functional requirements (and for extra security), the application may be exposed only to specific devices in the networks used at the relevant hospitals.
@@ -31,65 +33,18 @@ The application as it is planned involves an ASP.NET Core backend, using a frame
 
 The web servers may be shaped in many ways, but the suggested approach is to start with a base navigation framework such as Angular, Ionic or React on a Node.js runtime and combine it with other frameworks that are needed for the task at hand. The server will then communicate with the application servers for data traversing and storage. The web- and application servers may also be merged if the costs are too high and the gains are too low.
 
-When it comes to how graphical procedures and avatars are stored, they are best suited as JSON objects. An example of how a procedure may be represented in JSON format is shown in \autoref{fig:json-procedure}.
+When it comes to how graphical procedures and avatars are stored, they are best suited as JSON objects. JSON may also be used to store and transfer account informations, settings among other things. An example of how a procedure may be represented in JSON format is shown in \autoref{fig:json-procedure}.
 
 \begin{figure}
-    \begin{lstlisting}[language=json]
-{
-    "procedure": {
-        "title": "Test procedure",
-        "modifiedAt": "2019-06-30 17:32:23GMT+2",
-        "scheduledAt": "2019-07-07 10:00:00GMT+2",
-        "pages": [
-            {
-                "type": "drawing",
-                "data": [
-                    (...)
-                ]
-            },
-            {
-                "type": "video",
-                "source": "https://youtu.be/(...)"
-            },
-            {
-                "type": "image",
-                "source": "https://(...)"
-            }
-        ],
-        "measurements": {
-            "publishedAt": "2019-07-08 08:40:33GMT+2",
-            "comment": "Test measurements",
-            "data": [
-                {
-                    "name": "Blood pressure",
-                    "value": "120/80",
-                    "unit": "mmHg"
-                }
-            ]
-        },
-        "rating": {
-            "ratedAt": "2019-07-07 12:01:50GMT+2",
-            "comment": "Test rating",
-            "data": [
-                {
-                    "name": "happy",
-                    "value": 60
-                },
-                {
-                    "name": "sad",
-                    "value": 24
-                },
-                (...)
-            ]
-        }
-    }
-}
-    \end{lstlisting}
+    \lstinputlisting[language=json]{example-procedure.jsonc}
     \caption{An example procedure as described in JSON format}
     \label{fig:json-procedure}
 \end{figure}
 
 \section{Integration with existing systems}
+\label{sec:integration}
+
+The scope of this project involves minimal integration with existing healthcare and journal systems at the Children and Youth Clinic and Haukeland University Hospital. Given that Helse Vest IKT monitors most of said systems, it would be sensible to develop an application that can be adapted, or even be developed further on, by them. It was pointed out that the developers of the avatar generation system used well-established web technologies such as HTML, CSS and JavaScript to develop it, and that similar technologies were preferred for the new application. This led to a new direction in choosing the most suitable software tools.
 
 When viewing this application together with existing systems, it has several connections that must be implemented. The application is supposed to be used in correlation with guideline pathways, and the flow of information can be seen in light of a guideline pathway. The model seen in \autoref{fig:applicationmodel} takes the guideline pathway of mental disorders for children and youth \autocite{haugland2018} as an example.
 
@@ -100,7 +55,7 @@ When viewing this application together with existing systems, it has several con
     \label{fig:applicationmodel}
 \end{figure}
 
-The application is also to be integrated with existing information and journal systems. Details about these are not widely known and thus only speculations can be made. Information about procedures and appointments are fetched from these systems, updated as necessary. The graphical procedures are currently meant to be stored separately in the NoSQL database. Ratings can also be reflected in journals, supplying an extra dimension to each patient's journal.
+The application is also to be integrated with existing information and journal systems. Details about these are not widely known and thus only speculations can be made. Information about procedures and appointments are fetched from these systems, updated as necessary. The graphical procedures are currently meant to be stored separately in the NoSQL database. Ratings can also be reflected in journals, supplying an extra dimension to each patient's journal. If this information can be stored in journals, there is a possibility that these journals can function as a storage for ratings and the likes. How the connections themselves are made is yet to be investigated.
 
 \section{Anticipated challenges and feasibility}
 \label{sec:anticipatedchallenges}
@@ -109,7 +64,7 @@ The development tools chosen for an application should support the functionality
 
 \subsection{Personalised avatars}
 
-The avatar generation system created for E-LAN (from \autoref{sec:relatedwork}) can be used together with the application. This enables the user to view their avatar in procedures like they were participating themselves. A challenge lies in associating an avatar to each user while making it easy to modify it when needed. The system is based on a graphical user interface and does not present an API; it is very much a black box where the result is an exported PNG file.
+The avatar generation system created for E-LAN (from \autoref{sec:relatedwork}) can be used together with the application. This enables the user to view their avatar in procedures like they were participating themselves. A challenge lies in associating an avatar to each user while making it easy to modify it when needed. The system is based on a graphical user interface and does not present an API; it is very much a black box where the result is a single layer of raster graphics.
 
 \subsection{Realistic avatar projections}
 
@@ -134,41 +89,34 @@ The system outputs two-dimensional portrait images only, with the face and chest
 
 It is shown that 2D images can be rotated in 3D pretty realistically. \textcite{rivers2010} carried out a project which showed that it is possible to view a figure from any angle when given three 2D projections of it. Though, an alternative is to simply use such avatars in 2D-space. The IACTA application shows that this can be used with similar effect as a 3D-application \autocite{stalberg2018}.
 
-% \subsection{Visual art and template designs}
+\subsection{Visual art and template designs}
 
-% This brings us to the next challenge. (...)
+This kind of application demands a lot of visual art, most notably in procedures but also in avatars if the avatar generation system is to be updated. The creation of visual art does not come for free; one would either need to purchase art bundles or hire a designer for this task.
 
-% \subsection{Connections between client and administrator applications}
+\subsection{Connections between client and administrator applications}
 
-% (...)
+When an administrator publishes and schedules a new procedure, it should quickly appear for the corresponding patient. This sets some requirements for the architecture. Once a new procedure is out, the patient's page should be updated to reflect any changes -- even if the web page is already open.
 
-% \subsection{Integrations towards current healthcare systems}
+\subsection{Integrations towards current healthcare systems}
 
-% (...)
+As mentioned in \autoref{sec:integration}, integrations toward healthcare systems remain. The challenge lies in the fact that journal systems are big. When tackling this risk, one should also consider the fact that journal systems may be updated.
 
-% \subsection{Security concerns}
+\subsection{Security concerns}
 
-% (...)
+Additional measures may be necessary in order to restrict unauthorized access to the application. This is a matter for both administrator and patient aspects as any unauthorized access to these would be catastrophic. If possible, users may be checked against national authorization systems such as BankID for verifying their identities -- even only for once.
 
-% \subsection{Service workers and offline content}
+\subsection{Service workers and offline content}
 
-% (...)
+Offline content has always been a challenge for web applications, although the recent addition of \emph{service workers} make it easier. The technology is still new and experimental with varying (but improving) browser support, thus extensive testing may be needed to determine if the application can run completely offline.
 
-% % Experimental technology
-% % Not-so-easy with web projects
+\subsection{Scaling}
 
-% \subsection{Scaling}
+Depending on the network traffic, it may be necessary to design a scalable architecture. The scaling may be done through load balancers as previously suggested, or through scalable clusters in a container-orchestration system. More knowledge about the network traffic at the Children and Youth Clinic is needed.
 
-% (...)
+\subsection{Costs}
 
-% \subsection{Costs}
+An application of this size does not come without a significant price tag. Expenses include development team salaries, visual art, hosting and scaling. One needs to weight these expenses up with incomes (or projected incomes) in order to find out whether the application will be profitable. Investigating business models and budget variants which take incomes and expenses into consideration is suggested here.
 
-% (...)
+% \section{Handoff}
 
-\section{Handoff}
-
-The scope of this project involves minimal integration with existing healthcare and journal systems at the Children and Youth Clinic and Haukeland University Hospital. Given that Helse Vest IKT monitors most of said systems, it would be sensible to develop an application that can be adapted, or even be developed further on, by them. It was pointed out that the developers of the avatar generation system used well-established web technologies such as HTML, CSS and JavaScript to develop it, and that similar technologies were preferred for the new application. This led to a new direction in choosing the most suitable software tools.
-
-Attached to this thesis are Figma project files for the client and administrator applications. The former is interactive and the one used in this project's evaluation. % and source code for an incomplete software prototype using React and create-react-app.
-
-(...)
+% and source code for an incomplete software prototype using React and create-react-app.
