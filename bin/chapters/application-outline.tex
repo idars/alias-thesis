@@ -25,19 +25,73 @@ A revised and more detailed domain model is shown in \autoref{fig:domainmodel2}.
 
 \section{Architecture}
 
-The architecture follows a similar pattern to many production-scale web applications, being based on web- and application servers. These servers are exposed through a firewall, making them accessible through a web browser. For extra security, the application may be exposed only to the networks used at the relevant hospitals.
+The architecture follows a similar pattern to many production-scale web applications, being based on web- and application servers. The web servers are exposed through a firewall, making them accessible through a web browser. Following the non-functional requirements (and for extra security), the application may be exposed only to specific devices in the networks used at the relevant hospitals.
 
-\subsection{Backend}
+The application as it is planned involves an ASP.NET Core backend, using a framework resembling the one used at Helse Vest IKT. This setup is distributed across one or more application servers. To better support JSON data structures, the database system will consist of a document-oriented NoSQL database, optionally with load balancers.
 
-The planned application involves a .NET Core backend.
+The web servers may be shaped in many ways, but the suggested approach is to start with a base navigation framework such as Angular, Ionic or React on a Node.js runtime and combine it with other frameworks that are needed for the task at hand. The server will then communicate with the application servers for data traversing and storage. The web- and application servers may also be merged if the costs are too high and the gains are too low.
 
-\subsection{Frontend}
+When it comes to how graphical procedures and avatars are stored, they are best suited as JSON objects. An example of how a procedure may be represented in JSON format is shown in \autoref{fig:json-procedure}.
 
-(...)
+\begin{figure}
+    \begin{lstlisting}[language=json]
+{
+    "procedure": {
+        "title": "Test procedure",
+        "modifiedAt": "2019-06-30 17:32:23GMT+2",
+        "scheduledAt": "2019-07-07 10:00:00GMT+2",
+        "pages": [
+            {
+                "type": "drawing",
+                "data": [
+                    (...)
+                ]
+            },
+            {
+                "type": "video",
+                "source": "https://youtu.be/(...)"
+            },
+            {
+                "type": "image",
+                "source": "https://(...)"
+            }
+        ],
+        "measurements": {
+            "publishedAt": "2019-07-08 08:40:33GMT+2",
+            "comment": "Test measurements",
+            "data": [
+                {
+                    "name": "Blood pressure",
+                    "value": "120/80",
+                    "unit": "mmHg"
+                }
+            ]
+        },
+        "rating": {
+            "ratedAt": "2019-07-07 12:01:50GMT+2",
+            "comment": "Test rating",
+            "data": [
+                {
+                    "name": "happy",
+                    "value": 60
+                },
+                {
+                    "name": "sad",
+                    "value": 24
+                },
+                (...)
+            ]
+        }
+    }
+}
+    \end{lstlisting}
+    \caption{An example procedure as described in JSON format}
+    \label{fig:json-procedure}
+\end{figure}
 
 \section{Integration with existing systems}
 
-When viewing this application together with existing systems, it (...). The application can be used in many steps of a particular guideline pathway. The application's flow of information can be seen in light of a guideline pathway, and the model seen in figure \ref{fig:applicationmodel} takes the guideline pathway of mental disorders for children and youth \autocite{haugland2018} as an example.
+When viewing this application together with existing systems, it has several connections that must be implemented. The application is supposed to be used in correlation with guideline pathways, and the flow of information can be seen in light of a guideline pathway. The model seen in \autoref{fig:applicationmodel} takes the guideline pathway of mental disorders for children and youth \autocite{haugland2018} as an example.
 
 \begin{figure}
     \centering
@@ -46,8 +100,7 @@ When viewing this application together with existing systems, it (...). The appl
     \label{fig:applicationmodel}
 \end{figure}
 
-This application is intended to be used together with the avatar generation system from E-LAN described in \cref{sec:relatedwork}.
-The software seems to run on Windows with support for a web client, and outputs two-dimensional portrait pictures.
+The application is also to be integrated with existing information and journal systems. Details about these are not widely known and thus only speculations can be made. Information about procedures and appointments are fetched from these systems, updated as necessary. The graphical procedures are currently meant to be stored separately in the NoSQL database. Ratings can also be reflected in journals, supplying an extra dimension to each patient's journal.
 
 \section{Anticipated challenges and feasibility}
 \label{sec:anticipatedchallenges}
@@ -56,11 +109,11 @@ The development tools chosen for an application should support the functionality
 
 \subsection{Personalised avatars}
 
-The avatar generation system created for E-LAN (from \ref{sec:relatedwork}) can be used together with the application. This enables the user to view their avatar in procedures like they were participating themselves. A challenge lies in associating an avatar to each user while making it easy to modify it when needed. The system is based on a graphical user interface and does not present an API; it is very much a black box where the result is an exported PNG file.
+The avatar generation system created for E-LAN (from \autoref{sec:relatedwork}) can be used together with the application. This enables the user to view their avatar in procedures like they were participating themselves. A challenge lies in associating an avatar to each user while making it easy to modify it when needed. The system is based on a graphical user interface and does not present an API; it is very much a black box where the result is an exported PNG file.
 
 \subsection{Realistic avatar projections}
 
-The system outputs two-dimensional portrait images only, with the face and chest facing forward. The images are also limited to the top part of the body, leaving the lower body out. Concerns were raised about whether these images would look realistic in certain settings. For example, using a single 2D image, a person laying in the bed would look awkward unless viewed from above the bed. To deal with this, there are several approaches as seen in table \ref{tab:projecting-avatar}.
+The system outputs two-dimensional portrait images only, with the face and chest facing forward. The images are also limited to the top part of the body, leaving the lower body out. Concerns were raised about whether these images would look realistic in certain settings. For example, using a single 2D image, a person laying in the bed would look awkward unless viewed from above the bed. \Cref{tab:projecting-avatar} lists several approaches to this issue.
 
 % Figure showing avatar
 
@@ -79,42 +132,38 @@ The system outputs two-dimensional portrait images only, with the face and chest
     \label{tab:projecting-avatar}
 \end{table}
 
-It is shown that 2D images can be rotated in 3D pretty realistically. \textcite{rivers2010} carried out a project which showed that it is possible to view a figure from any angle when given three 2D projections of it.
+It is shown that 2D images can be rotated in 3D pretty realistically. \textcite{rivers2010} carried out a project which showed that it is possible to view a figure from any angle when given three 2D projections of it. Though, an alternative is to simply use such avatars in 2D-space. The IACTA application shows that this can be used with similar effect as a 3D-application \autocite{stalberg2018}.
 
-Though, an alternative is to simply use such avatars in 2D-space. 
+% \subsection{Visual art and template designs}
 
-The IACTA application shows that this can be used with similar effect as a 3D-application \autocite{stalberg2018}.
+% This brings us to the next challenge. (...)
 
-\subsection{Visual art and template designs}
+% \subsection{Connections between client and administrator applications}
 
-This brings us to the next challenge. (...)
+% (...)
 
-\subsection{Connections between client and administrator applications}
+% \subsection{Integrations towards current healthcare systems}
 
-(...)
+% (...)
 
-\subsection{Integrations towards current healthcare systems}
+% \subsection{Security concerns}
 
-(...)
+% (...)
 
-\subsection{Security concerns}
+% \subsection{Service workers and offline content}
 
-(...)
+% (...)
 
-\subsection{Service workers and offline content}
+% % Experimental technology
+% % Not-so-easy with web projects
 
-(...)
+% \subsection{Scaling}
 
-% Experimental technology
-% Not-so-easy with web projects
+% (...)
 
-\subsection{Scaling}
+% \subsection{Costs}
 
-(...)
-
-\subsection{Costs}
-
-(...)
+% (...)
 
 \section{Handoff}
 

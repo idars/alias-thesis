@@ -13,8 +13,7 @@ As previously stated in \autoref{sec:requirements}, the Children and Youth Clini
 As with most applications, there is a choice between the following approaches:
 
 \begin{itemize}
-    \item A \emph{native application} is written in each operating system's native languages. For Android this is Java, and Swift and Objective-C for iOS. Native applications can access all features which each OS may offer.
-    \item Another native application approach is to write the application in a different language and transpile it to native code. The resulting application is then very similar to a native one and has comparable performance.
+    \item A \emph{native application} is written in each operating system's native languages. For Android this is Java, and Swift and Objective-C for iOS. Native applications can access all features which each OS may offer. Another native application approach is to write the application in a different language and transpile it to native code. The resulting application is then very similar to a native one and has comparable performance.
     \item A \emph{hybrid application} encapsulates a web page into a smartphone application. Such applications use a browser instance to render elements, although without the search bar and tools of the browser. This approach offers functionality that you don't get with web applications, but has usually worse performance compared to a native solution.
     \item A mobile \emph{web application} is a responsive web page shown in the user's web browser. These do not appear in app stores but function just like an ordinary web page. Lately there have been increasing interest in Progressive Web Apps (PWAs) which aim to provide mobile web pages with app-like behaviour and functionality such as push-notifications. PWAs do, however, require a website which is capable of serving HTTPS.
     \item A \emph{desktop application} is an application that can be installed on operating systems such as Windows, macOS and Linux. As some tablets run Windows, this is also an alternative to be considered. The immediate downside is that they will not run on mobile operating systems. These applications are not necessarily cross-platform, but may be if they are built with cross-platform tools and software (similarly to a hybrid application).
@@ -29,7 +28,7 @@ Determining which approach to use requires paying attention to several factors: 
 Based on this, mobile and desktop applications are considered to be less suitable. Although mobile application frameworks make it possible to transpile JavaScript into native code, the syntaxes vary greatly and may not suit developers who are more familiar with web development. This leads us to two remaining approaches:
 
 \begin{itemize}
-    \item The first approach is based on \emph{hybrid applications}, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
+    \item The first approach is based on hybrid applications, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
     \item The second approach is through web applications which run in web browsers. There is always the possibility to enhance a web application, turning it into a Progressive Web Application. The application must be run through a web browser or through an app shortcut if a PWA is made.
 \end{itemize}
 
@@ -41,53 +40,53 @@ Given that both hybrid applications and web applications use web browsers (WebVi
 
 \section{Frameworks}
 
-Next to consider is frameworks. Frameworks allow developers to develop an application more efficiently by facilitating APIs, UI components, navigation, MVC patterns, utility methods or a combination of these. Some frameworks can also help deploying the application to app stores. \Cref{tab:frameworks} shows a few frameworks and what functionalities they offer.
+Next to consider is frameworks. Frameworks allow developers to develop an application more efficiently by facilitating APIs, UI components, navigation, MVC patterns, utility methods or a combination of these. Some frameworks can also help deploying the application to app stores. \Cref{tab:frameworks} shows a selection of frameworks and what functionalities they offer.
 
 \begin{table}
     \centering
     \begin{tabu}{l l L}
         \textbf{Framework} & \textbf{Functionality} & \textbf{Description} \\
         \hline
-        Meteor             & Native compiler    & JavaScript \\
-        NativeScript       & Native compiler    & JavaScript \\
-        React Native       & Native compiler    & Mobile version of React. Supports hot reloading. Focuses on Single Page Applications (SPAs). \\
+        Meteor             & Native compiler    & Code is written in JavaScript; compiles to Android, iOS and web \\
+        NativeScript       & Native compiler    & Code is written in JavaScript; compiles to Android and iOS \\
+        React Native       & Native compiler    & Code is written in JavaScript, JSX; compiles to Android, iOS and web; focuses on Single Page Applications (SPAs). \\
         \tabucline[hdottedline]{-}
-        Apache Cordova     & App wrapper & \\
-        Adobe PhoneGap     & App wrapper & \\
-        Ionic Capacitor    & App wrapper & \\
+        Apache Cordova     & App wrapper & Wraps HTML, CSS and JavaScript into a hybrid application; compiles to Android, iOS among others. \\
+        Adobe PhoneGap     & App wrapper & Wraps HTML, CSS and JavaScript into a hybrid application; compiles to Android, iOS among others; commercial version of Cordova with some additional features. \\
+        Ionic Capacitor    & App wrapper & Wraps HTML, CSS and JavaScript into a hybrid application; compiles to Android, iOS among others. \\
         \tabucline[hdottedline]{-}
-        Angular            & Navigation       & \\
-        Framework7         & Navigation \& UI & \\
-        Ionic              & Navigation \& UI & \\
-        React (+ Flux)     & Navigation \& UI & JavaScript and JSX (HTML-like syntax represented as JavaScript objects). Supports hot reloading. \\
-        Vue.js             & Navigation \& UI & \\
+        Angular            & Navigation       & JavaScript framework; code generation; command-line interface; support for PWAs. \\
+        Framework7         & Navigation \& UI & JavaScript framework; command-line interface; UI elements. \\
+        Ionic              & Navigation \& UI & JavaScript framework; command-line interface; UI elements. \\
+        React              & Navigation       & JavaScript, JSX framework; virtual DOM. \\
+        Vue.js             & Navigation       & JavaScript framework; virtual DOM. \\
         \tabucline[hdottedline]{-}
-        Bootstrap          & UI               & \\
-        Onsen              & UI               & \\
-        Polymer            & UI               & \\
-        Semantic UI        & UI               & \\
+        Bootstrap          & UI               & UI library. \\
+        Onsen              & UI               & UI library. \\
+        Polymer            & UI               & UI library. \\
+        Semantic UI        & UI               & UI library. \\
+        styled-components  & UI               & CSS-in-JS library. \\
         \hline
     \end{tabu}
-    \caption{List of web developer friendly frameworks for mobile and web application development}
+    \caption{A selection of web developer friendly frameworks for mobile and web application development}
     \label{tab:frameworks}
 \end{table}
 
-The most common way to make a hybrid app is to use a Cordova-application. Apache Cordova is the original concept while Adobe PhoneGap is an extension to Cordova and acts much the same with some additional features.
+The most common way to make a hybrid application is to use an app wrapper. Apache Cordova is the original concept while Adobe PhoneGap is an extension to Cordova and acts much the same with some additional features.
 
-It is unknown which frameworks the web developers of Helse Vest IKT have used previously, if any. A starting point is to assume that web developers have some prior experience with popular web frameworks. Any framework used for the project should therefore be easy to learn for any person skilled in HTML, CSS and JavaScript.
+It is unknown which frameworks the web developers of Helse Vest IKT have used previously, if any. A starting point is to assume that the aforementioned developers is well versed with HTML, CSS and JavaScript and have some prior experience with popular web frameworks. Any framework used for the project should therefore be easy to learn for any person skilled in HTML, CSS and JavaScript.
 
-A framework worth explaining is React
-React Native is a mobile version of React, able to transpile code to both Android and iOS.
+The frameworks listed in \autoref{tab:frameworks} should be easy enough for said developers to learn and adapt to as they all use familiar technologies, that is, when assuming prior experience with frameworks. Without any experience with frameworks, one needs to learn how they can integrated into the codebase. Syntaxes may vary, especially for React and its JSX language. Despite this, any choice of the listed frameworks would be reasonable here.
 
-Is it too difficult for a web developer to learn React and its adjacent technologies? Learning React most likely requires learning JSX, Redux and Flux as well. Although (...)
+Looking at the general picture, both aforementioned approaches would be suitable. Ultimately it is a matter of preference, as Helse Vest IKT will probably have an opinion of which setup they are the most comfortable with. The deciding factor, though, is whether the application is meant to be public or for use at the hospital only. Judging by the non-functional requirements, the application is supposed to be restricted by which devices it may run on. Such restrictions are best achieved through a web application that does not depend on an app store, and a web application is therefore considered the best approach at this stage.
 
-\section{Database system}
+% \section{Storage}
 
-SQL vs NoSQL
 
-\section{Storage}
+% Where the application should be stored architecture
+% SQL vs NoSQL
 
-JSON
+% JSON
 
 % Lagringsmessig vil historier være serialiserte og kunne lagres i databaser. For å overføre historier kan de sendes i form av JSON-strenger som vil beskrive informasjon som
 
