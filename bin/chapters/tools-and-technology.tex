@@ -1,78 +1,47 @@
 \chapter{Tools and technology}
 \label{ch:tools}
 
+Different types of technology and kinds of application are reflected upon in this chapter. The following discusses reasons behind choices that were made in the implementation planning process.
+
 \section{Choice of application setup}
+\label{sec:appsetup}
 
 % Refer to \ref{sec:requirements}
 
 As previously stated in \autoref{sec:requirements}, the Children and Youth Clinic indicated the application to be used for tablets with medium to large screens. In Norway, most of such tablets either run a full-fledged operating system (OS) such as Windows or a mobile OS such as Android and iOS. 
 
-As with most mobile applications, there is a choice between the following approaches:
+As with most applications, there is a choice between the following approaches:
 
 \begin{itemize}
     \item A \emph{native application} is written in each operating system's native languages. For Android this is Java, and Swift and Objective-C for iOS. Native applications can access all features which each OS may offer.
-    \item Another native approach is to write the application in a different language and compile it to native code. The resulting app is then very alike a native one and has similar performance.
-    \item A \emph{hybrid application} encapsulates a web page into an app. Such apps use a browser instance to render elements, although without the search bar and tools of the browser. This approach offers functionality that you don't get with web applications, but has usually worse performance compared to a native solution.
-    \item A mobile \emph{web application} is a responsive web page shown in the user's web browser. These do not appear in app stores but function just like an ordinary web page. Lately there have been increasing interest in Progressive Web Apps (PWAs) which aim to provide mobile web pages with app-like behaviour and functionality such as push-notifications.
+    \item Another native application approach is to write the application in a different language and transpile it to native code. The resulting application is then very similar to a native one and has comparable performance.
+    \item A \emph{hybrid application} encapsulates a web page into a smartphone application. Such applications use a browser instance to render elements, although without the search bar and tools of the browser. This approach offers functionality that you don't get with web applications, but has usually worse performance compared to a native solution.
+    \item A mobile \emph{web application} is a responsive web page shown in the user's web browser. These do not appear in app stores but function just like an ordinary web page. Lately there have been increasing interest in Progressive Web Apps (PWAs) which aim to provide mobile web pages with app-like behaviour and functionality such as push-notifications. PWAs do, however, require a website which is capable of serving HTTPS.
+    \item A \emph{desktop application} is an application that can be installed on operating systems such as Windows, macOS and Linux. As some tablets run Windows, this is also an alternative to be considered. The immediate downside is that they will not run on mobile operating systems. These applications are not necessarily cross-platform, but may be if they are built with cross-platform tools and software (similarly to a hybrid application).
 \end{itemize}
 
-Due to the uncertainty in which operating systems that are in use (and will be used in the future), going for a cross-platform application is the most preferred. 
+Progressive Web Applications are a relatively new kind of technology with increasing support in both Android and iOS. Some browsers also support adding an app icon to the user's app launcher, circumventing app stores in the process.
 
-% Dersom en Windows-løsning er ønskelig vil dette muligens kreve kunnskap om .NET, noe som ikke er blitt lært hittil. Det er flere måter å utvikle Windows 10-eksklusive applikasjoner på, men jeg har ikke gått i detalj gjennom disse ennå.
+% Due to the uncertainty in which operating systems that are in use (and will be used in the future), going for a cross-platform solution is the most preferred.
 
-% Dersom vi lander på å utvikle for mobile operativsystemer vil det være naturlig å lage en multiplatform-applikasjon. Dersom ønskelig kan man etterpå se på en web-applikasjon eller en Windows desktop app.
+Determining which approach to use requires paying attention to several factors: requirements, anticipated challenges and stakeholder interests among others. The requirements suggest using a cross-platform application primarily aimed for tablet devices, while Helse Vest IKT suggest using web technologies when developing the application. General factors such as cost, ease of use, responsiveness, support for older devices and debugging also play a role. 
 
-% \begin{lstlisting}[float]
-% - Xamarin (Microsoft)
-% 	- C og F
-% 	- Stabilt og robust rammeverk
-% 	- Kan utvikle for Windows 10 samtidig som for Android og iOS
-% 	- Dårligere ytelse
-% 	- Tidkrevende
-% - Flutter (Google)
-% 	- Dart (C-lignende syntaks, kompilerer til JavaScript)
-% 	- God ytelse
-% 	- Hot reload
-% 	- Ganske nytt; mangler erfaring som andre rammeverk har
-% - React Native (Facebook)
-% 	- HTML/CSS/JavaScript
-% 	- Bruker native UI-elementer
-% 	- Hot reload
-% 	- Kan gjenbruke kode for eventuell nettside
-% 	- Dårligere ytelse
-% 	- Relativt vanskelig å teste
-% - PhoneGap (Adobe) / Cordova (Apache)
-%     - HTML/CSS/JavaScript
-%     - Tradisjonelle web-rammeverk
-%     - Delvis manglende støtte for native funksjonalitet
-% - Titanium
-%     - JavaScript
-%     - 
-% \end{lstlisting}
+Based on this, mobile and desktop applications are considered to be less suitable. Although mobile application frameworks make it possible to transpile JavaScript into native code, the syntaxes vary greatly and may not suit developers who are more familiar with web development. This leads us to two remaining approaches:
 
-% Flutter har stort potensiale for utvikling av mobilapplikasjoner og ser ut til å passe oppgavebeskrivelsen på en god måte. Dersom man ønsker å utvikle en og samme app både for Windows 10 og for Android/iOS vil Xamarin være et lovende alternativ.
+\begin{itemize}
+    \item The first approach is based on \emph{hybrid applications}, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
+    \item The second approach is through web applications which run in web browsers. There is always the possibility to enhance a web application, turning it into a Progressive Web Application. The application must be run through a web browser or through an app shortcut if a PWA is made.
+\end{itemize}
 
-% Angående 3D-rotering av 2D-bilder kan dette oppnås enten ved å bruke en rekke bilder som er ferdig rotert, eller å faktisk rotere 2D-bilder i 3D. Xamarin har støtte for sistnevnte via SkiaSharp. Flutter støtter 3D-rotering også. Det ser ut til at React Native ikke har native støtte for dette, men det finnes trolig JavaScript-plugins som kan tilføye slik funksjonalitet.
+% Although only 2D images are currently supported, it seems reasonable to pick an approach that allow more extensive functionality if desired.
 
-Determining which approach to use requires paying attention to several factors: requirements, anticipated challenges and stakeholder interests among others. The requirements suggest using a cross-platform application primarily aimed for tablet devices, while Helse Vest IKT suggest using web technologies when developing the application. General factors such as cost, ease of use, responsiveness, support for older devices and debugging also play a role.
+Given that both hybrid applications and web applications use web browsers (WebViews) to show content on the screen, their performances are assumed to be comparable. The main difference is how a hybrid application is dependent on an app store whereas a web application is dependent on a website. In this case, a self-running application will require less server and networking resources. Comparing hybrid applications and PWAs, both support offline content, although the technology used for this in PWAs are still in an experimental state.
 
-When taking Helse Vest IKT's opinion into account, there are two main approaches remaining:
-
-The first approach involves a mobile app and can be achieved in two ways; one way is to compile an application into native code. There are a number of frameworks which are able to transpile JavaScript into native applications, although the syntaxes may vary. Another way is to use \emph{hybrid applications}, using HTML, CSS and JacaScript. These are typically built upon using a WebView, a browser instance that can be used by the application. Some frameworks offer their own JS-like language, providing additional methods and native functionality, which are compiled into traditional JavaScript.
-
-The remaining approach is through web applications which run in web browsers. Lately there have been increasing interest in \emph{Progressive Web Apps} (PWAs), which aim to make websites more app-like on mobile devices with offline access and push notifications. They do, however, require a website which is capable of serving HTTPS. PWAs is a relatively new kind of technology with increasing support in both Android and iOS. Some browsers also support adding an app icon to the user's app launcher, circumventing app stores in the process.
-
-Although only 2D images are currently supported, it seems reasonable to pick an approach that allow more extensive functionality if desired.
-
-Given that both hybrid applications and Progressive Web Applications use web browsers (WebViews) to show content on the screen, their performances are assumed to be pretty comparable. The main difference is how a hybrid application is dependent on an app store whereas a PWA is dependent on a website. In this case, a self-running application will require less server resources
-
-Based on the reflections above, a Progressive Web Application is considered to be less suitable for this project.
+% Based on the reflections above, a Progressive Web Application is considered to be less suitable for this project.
 
 \section{Frameworks}
 
-Next to consider is frameworks. Frameworks allow developers to develop an application more efficiently by facilitating APIs, UI components, navigation, MVC patterns, utility methods or a combination of these. Some frameworks can also help deploying the application to app stores.
-
-Table \ref{tab:frameworks} shows a few frameworks and what functionalities they offer.
+Next to consider is frameworks. Frameworks allow developers to develop an application more efficiently by facilitating APIs, UI components, navigation, MVC patterns, utility methods or a combination of these. Some frameworks can also help deploying the application to app stores. \Cref{tab:frameworks} shows a few frameworks and what functionalities they offer.
 
 \begin{table}
     \centering
@@ -99,13 +68,13 @@ Table \ref{tab:frameworks} shows a few frameworks and what functionalities they 
         Semantic UI        & UI               & \\
         \hline
     \end{tabu}
-    \caption{List of web developer friendly frameworks for mobile application development}
+    \caption{List of web developer friendly frameworks for mobile and web application development}
     \label{tab:frameworks}
 \end{table}
 
-The most common way to make a hybrid app is to use a Cordova-application. Apache Cordova is the original concept Adobe PhoneGap is an extension to Cordova and acts much the same with some additional features.
+The most common way to make a hybrid app is to use a Cordova-application. Apache Cordova is the original concept while Adobe PhoneGap is an extension to Cordova and acts much the same with some additional features.
 
-It is unknown which frameworks the web developers of Helse Vest IKT have used previously, if any. A starting point is to assume that web developers have no or poor prior experience with frameworks. Any framework used for the project should therefore be easy to learn for any person skilled in HTML, CSS and JavaScript.
+It is unknown which frameworks the web developers of Helse Vest IKT have used previously, if any. A starting point is to assume that web developers have some prior experience with popular web frameworks. Any framework used for the project should therefore be easy to learn for any person skilled in HTML, CSS and JavaScript.
 
 A framework worth explaining is React
 React Native is a mobile version of React, able to transpile code to both Android and iOS.

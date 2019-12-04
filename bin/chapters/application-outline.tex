@@ -1,9 +1,11 @@
 \chapter{Application outline}
 \label{ch:outline}
 
+Throughout this project, an implementation of the application has been planned. This chapter outlines how such an implementation may look like.
+
 \section{Implementation details}
 
-An extended use case diagram is shown in \autoref{fig:usecases2}.
+Following the reasoning in \autoref{sec:iteration6} and \autoref{sec:appsetup}, the current approach is to split the application in two; an web application for patients (optimized for tablets) and a web application for the staff (optimized for desktop). The avatar generation system is to be integrated into both applications. An extended use case diagram is shown in \autoref{fig:usecases2} to reflect these changes.
 
 \begin{figure}
     \centering
@@ -12,7 +14,7 @@ An extended use case diagram is shown in \autoref{fig:usecases2}.
     \label{fig:usecases2}
 \end{figure}
 
-A revised and more detailed domain model is shown in \autoref{fig:domainmodel2}.
+A revised and more detailed domain model is shown in \autoref{fig:domainmodel2}. Here, the concepts of the domain are further analysed and made more concrete. A procedure is now made up of several \emph{pages} and a textual \emph{document}. Each page may include a drawing, a video or an image depending on its source. The user's avatar is only displayed in a DrawingPage. The concepts of PictogramApp (stories and scenes) are carried over to the application as well, although named as \emph{procedures} and \emph{steps} respectively.
 
 \begin{figure}
     \centering
@@ -23,13 +25,19 @@ A revised and more detailed domain model is shown in \autoref{fig:domainmodel2}.
 
 \section{Architecture}
 
+The architecture follows a similar pattern to many production-scale web applications, being based on web- and application servers. These servers are exposed through a firewall, making them accessible through a web browser. For extra security, the application may be exposed only to the networks used at the relevant hospitals.
+
 \subsection{Backend}
+
+The planned application involves a .NET Core backend.
 
 \subsection{Frontend}
 
+(...)
+
 \section{Integration with existing systems}
 
-When viewing this application together with existing systems, it . The application can be used in many steps of a particular guideline pathway. The application's flow of information can be seen in light of a guideline pathway, and the model seen in figure \ref{fig:applicationmodel} takes the guideline pathway of mental disorders for children and youth \autocite{helsedirektoratet2019} as an example.
+When viewing this application together with existing systems, it (...). The application can be used in many steps of a particular guideline pathway. The application's flow of information can be seen in light of a guideline pathway, and the model seen in figure \ref{fig:applicationmodel} takes the guideline pathway of mental disorders for children and youth \autocite{haugland2018} as an example.
 
 \begin{figure}
     \centering

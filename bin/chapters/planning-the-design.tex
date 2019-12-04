@@ -18,7 +18,7 @@ The application is intended for several kinds of users. It is therefore importan
 \begin{itemize}
     \item The primary target group will be children and youth at the clinic with ages raging from 5 to 12. The content of the application must therefore be adapted to the target group and be suitable for their age.
     \item The second target group will be health professionals and staff at the clinic. This includes physicians, practitioners, consultants, medical assistants and other people working with healthcare.
-    \item A third target group is relatives and parents of patients. This group is worth considering as they have a considerable impact on the treatment and influence the patient's stay. In fact, it is common for parents to participate in decision-making matters for children aged below 16 years \autocite{helsedirektoratet2018}.
+    \item A third target group is relatives and parents of patients. This group is worth considering as they have a considerable impact on the treatment and influence on the patient's stay. In fact, it is common for parents to participate in decision-making matters for children aged below 16 years \autocite{helsedirektoratet2018}.
 \end{itemize}
 
 % When it comes to the design process of the application, the plan is to let children of the intended age group test it in various stages of its development. Their input is valuable since it can contribute to making the application age-appropriate \autocite{stalberg2016}.
@@ -26,20 +26,11 @@ The application is intended for several kinds of users. It is therefore importan
 \section{Domain}
 \label{sec:domain}
 
-The domain of the application is centered around healthcare and treatment of patients.
+The domain of the application is centered around healthcare and treatment of patients. Given that the application will be used in a hospital setting, the associated terminology will be extended to the application. Terms like \emph{institution} (part of the hospital of which one is situated in), \emph{patient} (a person who is hospitalized or is getting treatment) and \emph{procedure} (a standardized routine to be performed) are included.
 
-Given that the application will be used in a hospital setting, the associated terminology will be extended to the application. Terms like \emph{institution} (part of the hospital of which one is situated in), \emph{patient} (a person who is getting treatment) and \emph{procedure} (a standardized routine to be performed) are included.
+National guideline pathways can be integrated into this domain too. As shown in \autoref{fig:guideline-pathway}, guideline pathway may consist of several phases. Adding to this, each phase may consist of several procedures. When undergoing a guideline pathway, the patient transitions between phases of it, going from one phase to another (or even back to a previously visited one).
 
-National guideline pathways can be integrated into this domain. As shown in \autoref{fig:guideline-pathway}, guideline pathway may consist of several phases. Adding to this, each phase may consist of several procedures. When undergoing a guideline pathway, the patient transitions between phases of it, going from one phase to another (or even back to a previously visited one).
-
-The concepts of PictogramApp (stories and scenes) are carried over to the application as well while named as \emph{procedures} and \emph{steps} respectively.
-
-A class diagram of the domain is shown in \autoref{fig:domain1}, illustrating core concepts the application may have to deal with. As some concepts do not have proper English translations, both Norwegian and English names are displayed to avoid confusion.
-
-(...)
-
-% This figure describes ...
-% Mer ...
+A class diagram of the domain is shown in \autoref{fig:domain1}, illustrating core concepts the application may deal with. As some concepts do not have proper English translations, both Norwegian and English names are displayed in order to avoid confusion. Each association has a label describing the association and its context.
 
 \begin{figure}
     \centering
@@ -47,6 +38,8 @@ A class diagram of the domain is shown in \autoref{fig:domain1}, illustrating co
     \caption{Domain model showing core concepts}
     \label{fig:domain1}
 \end{figure}
+
+Each patient may configure their own avatar representing themselves. The idea is that these are displayed in procedures to give them a personal touch. Each procedure should be able to be rated -- more on this in \autoref{sec:requirements}.
 
 The scope of this project will be restricted, involving minimal integration with existing healthcare and journal systems at the Children and Youth Clinic and Haukeland University Hospital. There are not many options for an integration process as of now, and thus any integrations will only be thought of and exact details may be missing.
 
@@ -65,9 +58,13 @@ The initial requirements were formed after a meeting with Helgesen and Thorsen. 
 
 \subsection{Functional requirements}
 
-The Children and Youth Clinic wishes to have an application where the user can view personally targeted procedures. These will feature the user's own personal avatar along with information about an upcoming procedure at the hospital. Afterwards, the user should be able to rate their experience, and if possible, this rating should be reflected when the procedure is shown in retrospect.
+The Children and Youth Clinic wishes to have an application where the user may register an account and create a personal avatar. The latter is already achieved through the avatar generation system by Helse Vest IKT (see \autoref{sec:relatedwork}) and thus the challenge lies in incorporating this system into the application.
 
-(...)
+The user should be able to view personally targeted procedures. These will feature the user's own personal avatar along with information about an upcoming procedure at the hospital. Afterwards, the user should be able to rate their experience, and if possible, this rating should be reflected when the procedure is shown in retrospect. As a step to facilitate decision-making, some procedures should be able to be rearranged.
+
+At the end of a hospital stay, a graphical epicrisis should be generated. It should take the user's ratings in mind and showcase periods which stand out rating-wise. This epicrisis is intended to be a supplement to text-based epicrises which remain untouched.
+
+In addition, in order for such a system to work, medical staff should be able to create graphical procedures and assign users and dates to them. Template procedures should be made as to make this process less time-consuming for health professionals.
 
 An use case diagram is shown in \autoref{fig:usecases1}. Although some use cases are shared amongst both patient and staff, it may be appropriate to split them across different applications.
 
@@ -80,10 +77,6 @@ An use case diagram is shown in \autoref{fig:usecases1}. Although some use cases
 
 \subsection{Non-functional requirements}
 
-To begin with, the Children and Youth Clinic expressed that this application is intended to be used on tablets with medium to large screens. There are no requirements regarding which operating systems the software should run on, but the clinic informed that most of their tablets run Windows and Android operating systems.
+To begin with, the Children and Youth Clinic expressed that this application is intended to be used on devices provided by the hospital. These should be portable as the application may be freely used in beds, in semi-public spaces or other designated areas. An idea is to use tablets with medium to large screens. There are no requirements regarding which operating systems the software should run on, but the clinic informed that most of their tablets run Windows and Android operating systems.
 
-(...)
-
-% Mer
-% - på sykehusets utstyr
-% - bærbart
+As the system is intended for children and youth, the application should be shaped for children and youth. Extra attention to detail is necessary in order to make the application usable, not to mention suitable, for the target group.
